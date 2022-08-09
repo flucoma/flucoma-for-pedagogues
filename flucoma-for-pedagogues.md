@@ -214,11 +214,32 @@ _Up to this point is the main sequence of steps that we go through with many lea
 17. Analyze a sound file (the "target") that is not in the corpus and store in a separate DataSet. 
 18. Use a KDTree to find which slice in the corpus is closest to each slice in the target.
 19. Play back the discovered corpus slices in place of the target slices, "resynthesizing" the target sound by "concatenating" slices from the corpus.
-    - This offers a good moment [compare the different scalers](https://learn.flucoma.org/learn/comparing-scalers/) in FluCoMa. Scale the data before fitting the KDTree (this `fit` scaler will also need to be used on the target slice data point before query). Use different scalers and see if/how it changes what the nearest neighbors are and therefore what the resulting sound is.
+    - This offers a good moment  to [compare the different scalers](https://learn.flucoma.org/learn/comparing-scalers/) in FluCoMa. Scale the data before fitting the KDTree (this `fit` scaler will also need to be used on the target slice data point before query). Use different scalers and see if/how it changes what the nearest neighbors are and therefore what the resulting sound is.
 
 ## Introduction to NMF
 
-The family of nonnegative matrix factorization objects in FluCoMa can be daunting to wrap one's head around.
+The family of nonnegative matrix factorization objects in FluCoMa can be daunting to wrap one's head around. We've identified a sequence of introducing the objects and their features that seems to work well for revealing the power these objects offer without overwhelming or confusing learners.
+
+The steps outlined below pretty closely follow these two Learn articles:
+* [Audio Decomposition using BufNMF](https://learn.flucoma.org/learn/bufnmf/)
+* [Seeding BufNMF with Bases and Activations](https://learn.flucoma.org/learn/seeding-nmf/) 
+
+They can also be found in these example files:
+* [NMFExamples for Max]()
+* [NMFExamples for SuperCollider]()
+
+1. Listen to the [Nicol drump loop](https://learn.flucoma.org/audio/Nicol-LoopE-M.mp3) (that comes with the FluCoMa Toolkit). Look at the [spectrogram](https://learn.flucoma.org/learn/bufnmf/00_original_spectrogram_mel_color.png) and identify where in the spectrum and in time the [different drum instruments (roughly) exist](https://learn.flucoma.org/learn/bufnmf/00_boxes_over_nicol-01.png). Notice that because there is a lot of overlap both in spectral space and in time, trying to "decompose" this buffer using a slicer or a spectral filter wouldn't be too successful. There will be many components that would contains _some_ of more than one drum instrument's sound.
+2. Use BufNMF to decompose the drum loop into two components and listen to what that returns. Make sure the learners know that that the extent of information that is given to the NMF algorithm is the mono source drum loop and the number "two".
+3. Increase the number of components to three and ask the learners what they think will happen. Many will predict that NMF will compose the mono drum loop into three components containing the (1) snare drum sounds, (2) hi-hat sounds, and (3) kick drum sounds. It turns out they are correct. (If this is not the result, run it a few more times, it surely will be soon! This unpredictability can feed into some nuances learned later.) 
+4. Explain that what the algorithm is trying to do is create spectral templates that can (as well as possible) describe or summarize the different kinds of spectral frames it finds in the buffer. It will create as many spectral templates as the number of components requested. It looks for parts of the spectrum that tend to occur together in time and combines those parts into the same spectral template so that template can be used to describe lots of the parts of the buffer. One good place to look for this is the partials of the resonant tone of the snare drum. These spectral peaks are a salient feature to notice always occur together.
+5. At this point introduce the concept of [bases](https://learn.flucoma.org/learn/bufnmf/#bases). In NMF terminology this is what the spectral templates are called. Using NMFFilter play some pink noise "through" these bases to hear how it filters the noise according to spectra that we can recognize from the source drum loop.
+6. Paired with each basis is an [activation](https://learn.flucoma.org/learn/bufnmf/#activations), which represents how present (or how "active") each one of the bases is throughout the audio buffer. Because these exist in buffers, play back the values in these buffers and use them as amplitude envelopes to control the loudness of pink noise. Notice that we recognize the rhythms of the different drum instruments.
+7. One nice thing to do here is to mix and match bases and activations. Use NMFFilter with a basis from one drum instrument to filter pink noise while using an activation from a different drum instruments to control the loudness. 
+8. Also, pair the correct basis and activation from each drum hit to "resynthesize" the original instrument using pink noise as a source. Explain that this is kind of how BufNMF actually performs resynthesis, but using the reconstructed magnitude spectrum of the original (and the phases from the original). (Of course no pink noise is used.) Playing all three faux-pink noise resynthesized instruments at the same is surprisingly convincing and compelling to listen to.
+
+**NMFFilter**
+
+9. Now we turn more properly towards NMFFilter, not as tool to demonstrate bases but as its own object. Using the bases derived in step three, filter the original drum loop through NMFFilter.
 
 # Common Learning Challenges & Strategies
 
