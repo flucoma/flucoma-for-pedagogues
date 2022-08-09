@@ -141,7 +141,7 @@ After completing the MLPRegressor activity, one common extension is to do an act
 * [in SuperCollider](https://www.youtube.com/watch?v=Y1cHmtbQPSk)
 * [in Max](https://www.youtube.com/watch?v=cjk9oHw7PQg)
 
-1. Share a [real world example](https://learn.flucoma.org/examples/teaching-material/classifier-example.pdf) (including watching a performance excerpt, this one has a [before]() and [after]()) of why someone might want to use a system like this.
+1. Share a [real world example](https://learn.flucoma.org/examples/teaching-material/classifier-example.pdf) (including watching a performance excerpt, this one has a [before and after](https://youtu.be/8QtvjMUGGB8)) of why someone might want to use a system like this.
 2. Using a [slides presentation](https://learn.flucoma.org/examples/teaching-material/classifier-process.pdf) step through how we will be collecting training data and training the neural network, including some intuition about how the training process works.
 3. Open up the CCE of choice and demonstrate a completed version of what we're about to code.
 4. Code-along, starting from a "starter patch" that has a few key items already in place:
@@ -266,3 +266,5 @@ Clustering as an example
 # Relevance to Contemporary Society
 
 # More Information
+
+# Links to Pedagogical Materials
