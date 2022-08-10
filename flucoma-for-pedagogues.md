@@ -277,7 +277,11 @@ _Understanding this process is best done by also seeing the graphics on the [See
 
 # Common Learning Challenges & Strategies
 
+Over the course of teaching many workshops, we observed some common challenges for FluCoMa learners. Below are a few of the challenges we found and some strategies for approaching them pedagogically.
+
 ## New Ways of Using Buffers
+
+The centrality of buffers to FluCoMa 
 
 Buffer interface  
 Time series of audio  
@@ -316,7 +320,195 @@ Clustering as an example
 
 # Multi-Day Workshops
 
-# Suggested Semester-Long Syllabus
+# Example Semester-Long Syllabus
+
+**Machine Listening and Machine Learning for Music Making**
+
+This is an example syllabus designed to be used in coordination with the [FluCoMa](https://www.flucoma.org) Toolkit.
+
+**Suggested Course Prerequiste**
+
+At least one semester of introduction to creative coding for music (Max, SuperCollider, or Pure Data). The creative coding environment should be the same one they will use with FluCoMa.
+
+**Required Materials**
+
+* **FluCoMa Toolkit (free)** Installation instructions at https://learn.flucoma.org/installation/
+* **A creative coding environment of choice:** Max, SuperCollider, or Pure Data (at the instructor's discretion, the course could be taught in multiple languages simultaneously). SuperCollider and Pure Data are both free. Many educational institutions have Max licences for students to use for free. 
+* **Access to FluCoMa's learning resources (free)** Found at http://learn.flucoma.org.
+
+**SWBAT**
+
+At the end of this semester, **students will be able to**:
+
+1. Use computational thinking and data science methods to approach and solve problems based in sound.
+2. Think creatively about and apply machine listening and machine learning to design compositional and performance systems.
+3. Create idiosyncratic musical expressions that use machine listening and machine learning.
+4. Understand the limitations of machine listening and machine learning. Be able to assess machine accuracy and analyze human assumptions.
+5. Express intuitions about selecting algorithms and approaches for given tasks.
+6. Relate knowledge and intution about machine learning and machine automation to broader applications of these technologies in society.
+
+**Bibliography**
+
+Regarding SWBAT #6, **we believe that the enhanced understanding of data, data science, and machine learning that this course provides should be used as a lens to consider how these tools often uphold ineqalities, injustices, and hegemonies in our socieites.** Below is a list of books (in no particular order) that provide many examples of contemporary technologies negative impacting marginalized communities. Many additionally offer directions for how to approach and use data science ethically. We recommend selecting a book or readings from these books to augment the course. Each of these is written for different audiences, so selecting which is best is at the instructor's discretion.
+
+  - _Data Feminism_ by Catherine D'Ignazio and Lauren F. Klein. 
+  - _Weapons of Math Destruction_ by Cathy O'Neil
+  - _Hello World_ by Hannah Fry
+  - _Blockchain Chicken Farm: And Other Stories of Tech in China's Countryside_ by Xiaowei Wang
+  - _The Alignment Problem_ by Brian Christian
+
+**Repertoire**
+
+Although this document does not contain repertoire examples, we encourage the reader to visit https://learn.flucoma.org/explore/ which offers many examples of creative projects using machine listening and machine learning with FluCoMa as well as other toolkits. Many of these examples are accompanied by documentation, interviews, and articles about the thinking behind and implementation of the work.
+
+**Schedule**
+
+This course schedule is designed for a 14 week semester with two 90-minute class meetings per week. We think the schedule outlined below is quite ambitious and may be most appropriate for a class apt to move quickly. A question mark (_?_) after a topic indicates that this maybe won't fit in the class or the week and could be considered optional.
+
+**Week 1: Intro to Neural Networks**
+
+  - Using a Neural Network to Control a Synthesizer
+    - DataSet
+    - Buffer interface
+    - MLPRegressor
+  
+  - Classifying sound based on MFCCs
+    - LabelSet
+    - MLPClassifier
+    - Training-Testing Split
+    - JSON I/O
+
+**Week 2: Audio and Statistical Analysis**
+
+  - Sorting Sounds Based on Audio Analysis
+    - NoveltySlice
+    - NRT buffer analyses
+      - BufSpectralShape
+      - BufPitch
+      - BufLoudness
+      - FluidWaveform
+    - [BufStats](https://learn.flucoma.org/reference/bufstats/)
+      - mean, standard deviation, skewness, kurtosis, order statistics
+  
+  - Browsing Sounds in 2 Dimensional Space (Loudness & Centroid)
+    - [Batch Processing](https://learn.flucoma.org/learn/batch-processing/)
+    - Plotter
+    - [KDTree](https://learn.flucoma.org/reference/kdtree/) for nearest neighbour lookup
+
+**Week 3: Slicing Audio & Finding "Novelty"**
+
+  - Slicers
+    - (Buf)AmpSlice
+    - (Buf)OnsetSlice
+    - (Buf)TransientSlice
+    - (Buf)AmpGate
+  
+  - (Buf)[NoveltySlice](https://learn.flucoma.org/reference/noveltyslice/) & Slicer Feature Curves
+    - What is "Novelty"
+    - (Buf)NoveltyFeature
+    - (Buf)AmpFeature
+    - (Buf)OnsetFeature
+    
+**Week 4: Why Machines Listen and Learn Differently from Humans**
+
+  - Comparing Human & Machine Assumptions of Machine Listening
+    - [Why Scale](https://learn.flucoma.org/learn/why-scale/)
+    - Linear vs. Logarithmic Scaling
+    - Log Centroid
+    - MelBands
+    - MFCC
+    - Chroma
+  
+  - The Musical Implications of Scaling ([Comparing Scalers](https://learn.flucoma.org/learn/comparing-scalers/))
+    - Normalize
+    - Standardize
+    - Robust Scaler
+
+**Week 5: Dimensionality Reduction**
+
+  - Reducing Large Analyses to a 2 Dimensional Performance Space
+    - [Proximity as Similarity](https://learn.flucoma.org/learn/why-scale/)
+    - Other Measures of Distance
+    - Principal Component Analysis
+  
+  - Uniform Manifold Approximation and Projection ([UMAP](https://learn.flucoma.org/reference/umap/))
+
+**Week 6: Concatenative Synthesis**
+
+  - NRT Concatenative Synthesis
+    - The Curse of Dimensionality
+    - The Hinges / The Butterfly Effect: With a big system, small parameter changes can have a big effect
+  
+  - Real-Time Concatenative Synthesis
+    - Inline Learning
+    - Real-Time considerations with FluCoMa
+
+**Week 7: Clustering**
+
+- [KMeans](https://learn.flucoma.org/reference/kmeans/)
+  - Seeding
+
+- [SKMeans](https://learn.flucoma.org/reference/skmeans/)
+  - Cosine Distance
+
+**Week 8: Concert & Grid?**
+
+  - [Grid](https://learn.flucoma.org/reference/grid/)?
+
+  - Midterm Concert
+
+**Week 9: Outliers & Other Data Considerations**
+
+  - [What is an outlier](https://learn.flucoma.org/learn/outliers/)
+    - [Weighting Stats](https://learn.flucoma.org/learn/weighting-stats/)
+    - [Removing Outliers with BufStats](https://learn.flucoma.org/learn/removing-outliers/)
+
+  - SQL-type Queries
+    - DataSetQuery
+
+**Week 10: Signal Decomposition**
+  
+  - Signal Decomposition
+    - [Sines](https://learn.flucoma.org/reference/sines/)
+    - Transients
+
+  - Harmonic-Percussive Source Separation
+    - [HPSS](https://learn.flucoma.org/reference/hpss/)
+  
+**Week 11: Non-negative Matrix Factorization**
+
+  - Decomposing Audio into Sound Object Components
+    - [BufNMF](https://learn.flucoma.org/learn/bufnmf/) (Bases and Activations)
+    - NMFFilter
+    - NMFMatch
+    - BufNMFCross?
+  
+  - [Seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) & Over-Decomposing
+    - BufNMFSeed?
+    - NMFMorph?
+
+**Week 12: Advanced Neural Networks**
+
+  - Predicting Synthesis Parameters from Real-Time Audio Analyses
+    - [Advanced MLP Parameters](https://learn.flucoma.org/learn/mlp-parameters/)
+
+  - Autoencoders
+    - Latent Space
+    - Noise Reduction
+
+**Week 13: Bundling Time**
+
+  - Stats
+    - Leaky Integrators
+
+  - Sonically Informed Analysis
+    - Analyzing different envelope sections of a sound
+
+**Week 14: Concert & AudioTransport?**
+
+  - [AudioTransport](https://learn.flucoma.org/reference/audiotransport/)?
+
+  - Final Concert
 
 # Relevance to Contemporary Society
 
