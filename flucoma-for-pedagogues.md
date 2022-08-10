@@ -8,8 +8,6 @@ geometry: margin=1in
 
 \pagebreak
 
-by Ted Moore
-
 # Introduction
 
 The FluCoMa Toolkit is not limited to the actual code objects that use the "Fluid" prefix. FluCoMa is also a collection of learning resources, code examples, commissioned artworks, musicological articles, interviews, podcasts, a philosophy about interface design for creative coding, a conversation about the future of computer music, a curriculum of machine listening and machine learning topics, a community of users around the world, and more. The materials included here extend this ecosystem to encompass resources for pedagogues that might be used to teach FluCoMa in various settings. While some of the ideas and resources presented below are FluCoMa-specific, many of them are toolkit-agnostic and we hope that they can be used by anyone looking to teach machine listening and machine learning for creative music making.
@@ -177,7 +175,7 @@ Because these steps can be applied in various workflows and branch towards many 
 
 **Analysis**
 
-5. Use BufSpectralShape and BufStats to retrieve the mean spectral centroid of each slice.
+5. Use [BufSpectralShape](https://learn.flucoma.org/reference/spectralshape/) and [BufStats](https://learn.flucoma.org/reference/bufstats/) to retrieve the mean spectral centroid of each slice.
     - Sometimes we then use this analysis to sort the slices from lowest to highest mean centroid and listen to them in that order. This _mostly_ works but also raises an important awareness of why some slices are perceived to be out of place: critical reflection on what a spectral centroid represents (which we mostly expect users to have some idea of), why using the mean as a statistical summary can be misleading, and how/why there could be multiple sounds in a single slice.
     - After sorting, one could create a stopping point by encouraging users to use some of their own sounds for slicing, analysis, sorting, or playback. They should experiment changing parameters in each of these steps to see how it changes the whole process (including trying different statistical summaries or different analyses from BufSpectralShape).
 6. Use BufLoudness and BufStats to retrieve the mean loudness of each slice.
@@ -201,7 +199,7 @@ Because these steps can be applied in various workflows and branch towards many 
 
 _This next set of steps tends to work will with a more diverse corpus of sounds, so before moving on one might replace the buffer that has the drump loop with a buffer of many more sounds--perhaps_ all _the sounds in FluCoMa's example sounds folder._
 
-12. Replace the BufSpectralShape and BufLoudness analyses with one BufMFCC analysis using 13 coefficients and `startCoeff` = 1.
+12. Replace the [BufSpectralShape](https://learn.flucoma.org/reference/spectralshape/) and BufLoudness analyses with one BufMFCC analysis using 13 coefficients and `startCoeff` = 1.
     - We find that questions like, "But what _is_ an MFCC?", are very common. Depending on how much time is available, this may be a good opportunity to explain MFCCs more in depth using the [web reference](https://learn.flucoma.org/reference/mfcc/) and/or [interactive explanation](https://learn.flucoma.org/reference/mfcc/explain/).
 13. Use UMAP to reduce the 13 dimensional DataSet to 2 dimensions. Use the [UMAP web reference](https://learn.flucoma.org/reference/umap/) to provide some understanding of what UMAP does.
 14. Normalize the output of UMAP.
@@ -223,10 +221,12 @@ _Up to this point is the main sequence of steps that we go through with many lea
 The family of nonnegative matrix factorization objects in FluCoMa can be daunting to wrap one's head around. We've identified a sequence of introducing the objects and their features that seems to work well for revealing the power these objects offer without overwhelming or confusing learners. Before/in parallel with considering the sequence below it will be good to familiarize oneself with the NMF objects in FluCoMa ([BufNMF](https://learn.flucoma.org/reference/bufnmf/), [NMFFilter](https://learn.flucoma.org/reference/nmffilter/), [NMFMatch](https://learn.flucoma.org/reference/nmfmatch/), [BufNMFSeed](https://learn.flucoma.org/reference/bufnmfseed/), [BufNMFCross](https://learn.flucoma.org/reference/bufnmf/bufnmfcross), and [NMFMorph](https://learn.flucoma.org/reference/nmfmorph/)).
 
 The steps outlined below pretty closely follow these two Learn articles:
+
 * [Audio Decomposition using BufNMF](https://learn.flucoma.org/learn/bufnmf/)
 * [Seeding BufNMF with Bases and Activations](https://learn.flucoma.org/learn/seeding-nmf/) 
 
 They can also be found in these example files:
+
 * [NMFExamples for Max]()
 * [NMFExamples for SuperCollider]()
 
@@ -281,22 +281,64 @@ Over the course of teaching many workshops, we observed some common challenges f
 
 ## New Ways of Using Buffers
 
-The centrality of buffers to FluCoMa 
+FluCoMa uses buffers to store all kinds of data, not just audio. This may be new for learners who are used to using buffers _only_ for holding audio, and may even associate the two as a single concept ("buffer == audio"). This becomes increasingly complicated when we begin to manipulate the data in buffers as arrays or matrices. A few strategies we've developed for help learners feel more comfortable with buffers include:
 
-Buffer interface  
-Time series of audio  
-Time series of not audio  
-Arrays (the idea that it would be not a time series)  
-Reasoning for why buffers are used  
-Specific complaints from users  
-Strategies for responding to these challenges  
-Changes in how buffer interfaces work in CCEs evolving  
+**Initial Encounter**
 
-## Advanced Neural Network Tutorials
+The first moment at which a learner is asked to view a buffer in a new way is often when we allocate a buffer to hold a data point. If the data point has just 2 dimensions (such as with the [MLPRegressor activity](#mlpregressor)), we will allocate the buffer with only 2 frames (in Max: `@samps 2`; in SuperCollider: `Buffer.alloc(s,2)`). At this point we try to offer something like the following: "The way we most often use buffers in [this CCE] is to hold audio samples which very commonly have 44,100 samples per second, so our buffers could have many tens or hundreds of thousands of values in them. Because I know this buffer is only going to need to hold two samples, I'll just allocate it to have two samples."
+
+**Holding Analyses**
+
+Once we start writing audio analyses into buffers (with the `feature` argument), learners often have a hard time keep track of the structure of the buffers (What do the channels represent? How many are there? What do the frames represent? How many are there?). We found that offering CCE-agnostic [charts](buffer-charts) of the "shape" of the buffer is very helpful for giving learners a mental model to hold in their mind.
+
+It's also useful to point out that for buffers that hold audio analyses, the frames (or what we sometimes refer to as the "`x` axis" in reference to the charts above) is still a time series, just like audio is, but now it's not a time series of voltages (as in audio), it's a time series of descriptors (such as spectral centroid). 
+
+Because each frame represents an FFT frame from the STFT analysis the sample rate would not be a usual 44,100 samples per second, but a much lower rate of frames per second. FluCoMa buffer processors (such as the audio descriptor analyzers) set the _sample rate_ of these buffers appropriately. If an audio buffer is analyzed with a `hopSize` of 512 samples, the `features` buffer that the analyses get written into will have a sample rate of 86.1328125 frames per second. If the values in that buffer are read back at that rate, they will correspond in time (be synchronized with) to the audio on which the analysis was based.
+
+**Manipulating & Copying Data**
+
+Often it is necessary to manipulate the data in a buffer, such as pick out values from certain channels and/or frames and copy them to another buffer. In order to provide some test and check interactivity to build fluency with these operations, the appropriate web references have interactive GUIs for practicing:
+  - [BufSelect](https://learn.flucoma.org/reference/bufselect/)
+  - [BufSelectEvery](https://learn.flucoma.org/reference/bufselectevery/)
+  - [BufFlatten](https://learn.flucoma.org/reference/bufflatten/)
+  - [BufCompose](https://learn.flucoma.org/reference/bufcompose/)
+  - [BufScale](https://learn.flucoma.org/reference/bufscale/)
+
+**Why Buffers**
+
+It also may be of interest to learners to hear the explanation of _why_ buffers are used in this way. FluCoMa users buffers in this way for a few reasons:
+
+* The notion of "buffer" is shared across all three CCEs that FluCoMa supports. This allows for shared syntax and usage of objects across all three environments.
+* In all three CCEs, buffers are accessed at the lower levels of code allowing for:
+  - Faster processing by interfacing directly with the C++ code.
+  - Simpler implementation of functions across all three CCEs because all three environments share the same C++ code base for all of the audio analysis, buffer processing, and algorithmic computing.
+* Having data in buffers allows for it to be more flexibly accessed and used in other parts of the CCE. For example because the MLPRegressor writes predictions into a buffer, it's possible to be predicting wavetable shapes directly into a buffer that is simultaneously  being read out of (thanks to user Timo Hoogland for this example!).
+
+## Advanced Neural Networks
+
+Learns often follow up the [neural network 101 activity](#mlpregressor) with questions about the hyper-parameters (which we call parameters or arguments) of the MLP. In shorter workshops (two days or fewer) we have felt that it's not enough time to delve into this with enough depth to make it understood and _useable_ for the participants, so we've directed them towards our web resources on the topic. In longer workshops (3 or more days) we have take time later in the week (day 3 or 4) after the "101" activity to unpack many more ideas and strategies about the MLP objects.
+
+**Web Resources**
+
+* [Neural Network Training](https://learn.flucoma.org/learn/mlp-training/) is an overview of how neural networks learn. It is intended to be a resource for the slightly more curious or for those who would benefit from gaining a little more intuition about what is going on "under the hood". Much of this article is expressed in the "101" activity.
+* [Neural Network Parameters](https://learn.flucoma.org/learn/mlp-parameters/) goes through each parameter or argument in the MLP objects and gives a more thorough description of what it is, why one might adjust it, and what a generally reasonable starting place is. This is often where we direct learners who ask about these parameters when we don't have time to unpack them during a workshop.
+* [Training and Testing Data](https://learn.flucoma.org/learn/training-testing-split/) describes why it can be important to validate the results of a trained MLP. It explains why one would go about validating a model, what to look out for, what certain results might mean, and what would might do to improve a model.
+
+**Building Intuition about How Neural Networks Learn**
+
+The sequence of explanation that we've used for both the [MLPRegressor](regressor-process.pdf) and [MLPClassifier](classifier-process.pdf) seems to work quite well for giving learners intuition about the training process of an MLP. These explanations can be seen at the beginning of the the [MLPRegressor](https://learn.flucoma.org/learn/regression-neural-network/) and [MLPClassifier](https://learn.flucoma.org/learn/classification-neural-network/) tutorial videos.
+
+**MLP Parameters**
+
+In addition to pointing at the [Neural Network Parameters](https://learn.flucoma.org/learn/mlp-parameters/) article, when we have had time in workshops, we've also allocated some time to [explaining the parameters in more detail](mlp-parameters.pdf).
+
+**Visualizing a MLP**
+
+One might notice in many of the resources above that there are node-and-edge graphs of MLP architectures. We found that these are very useful for learners to concretize a few facets of MLPs: (1) "feed-forward", (2) "back-propagation", (3) "fully-connected layers", (4) numbers of hidden layers and nodes, (5) total number of parameters in an architecture, and more. We also learned that it is important to have a visual representation of the architecture that is _actually used_ in the activity. We use a very basic [graphviz script](https://github.com/flucoma/graphics/tree/main/nn_visualizer) to generate these graphs.
 
 ## Stateful Objects
 
-Stateful objects  
+Stateful objects
 Added names to objects (max & pd) (sc already has variable names)
 
 ## Threading
@@ -304,6 +346,8 @@ Added names to objects (max & pd) (sc already has variable names)
 ### Max
 
 ### SC
+
+## Fourier Transform & STFT
 
 ## Dealing with Time
 
@@ -318,6 +362,14 @@ Clustering as an example
 
 ## De-Myth-ifying Machine Learning
 
+# Advanced Activities & Examples
+
+## MLPRegressor with Audio Descriptors as Input
+
+## Wavetable Autoencoder
+
+## UMAP 1D
+
 # Multi-Day Workshops
 
 # Example Semester-Long Syllabus
@@ -326,11 +378,11 @@ Clustering as an example
 
 This is an example syllabus designed to be used in coordination with the [FluCoMa](https://www.flucoma.org) Toolkit.
 
-**Suggested Course Prerequiste**
+**SUGGESTED COURSE PREREQUISITE**
 
 At least one semester of introduction to creative coding for music (Max, SuperCollider, or Pure Data). The creative coding environment should be the same one they will use with FluCoMa.
 
-**Required Materials**
+**REQUIRED MATERIALS**
 
 * **FluCoMa Toolkit (free)** Installation instructions at https://learn.flucoma.org/installation/
 * **A creative coding environment of choice:** Max, SuperCollider, or Pure Data (at the instructor's discretion, the course could be taught in multiple languages simultaneously). SuperCollider and Pure Data are both free. Many educational institutions have Max licences for students to use for free. 
@@ -345,91 +397,92 @@ At the end of this semester, **students will be able to**:
 3. Create idiosyncratic musical expressions that use machine listening and machine learning.
 4. Understand the limitations of machine listening and machine learning. Be able to assess machine accuracy and analyze human assumptions.
 5. Express intuitions about selecting algorithms and approaches for given tasks.
-6. Relate knowledge and intution about machine learning and machine automation to broader applications of these technologies in society.
+6. Relate knowledge and intuition about machine learning and machine automation to broader applications of these technologies in society.
 
-**Bibliography**
+**BIBLIOGRAPHY**
 
 Regarding SWBAT #6, **we believe that the enhanced understanding of data, data science, and machine learning that this course provides should be used as a lens to consider how these tools often uphold ineqalities, injustices, and hegemonies in our socieites.** Below is a list of books (in no particular order) that provide many examples of contemporary technologies negative impacting marginalized communities. Many additionally offer directions for how to approach and use data science ethically. We recommend selecting a book or readings from these books to augment the course. Each of these is written for different audiences, so selecting which is best is at the instructor's discretion.
 
   - _Data Feminism_ by Catherine D'Ignazio and Lauren F. Klein. 
   - _Weapons of Math Destruction_ by Cathy O'Neil
   - _Hello World_ by Hannah Fry
+  - _Revolutionary Mathematics_ by Justin Joque
   - _Blockchain Chicken Farm: And Other Stories of Tech in China's Countryside_ by Xiaowei Wang
   - _The Alignment Problem_ by Brian Christian
 
-**Repertoire**
+**REPERTOIRE**
 
 Although this document does not contain repertoire examples, we encourage the reader to visit https://learn.flucoma.org/explore/ which offers many examples of creative projects using machine listening and machine learning with FluCoMa as well as other toolkits. Many of these examples are accompanied by documentation, interviews, and articles about the thinking behind and implementation of the work.
 
-**Schedule**
+**SCHEDULE**
 
 This course schedule is designed for a 14 week semester with two 90-minute class meetings per week. We think the schedule outlined below is quite ambitious and may be most appropriate for a class apt to move quickly. A question mark (_?_) after a topic indicates that this maybe won't fit in the class or the week and could be considered optional.
 
 **Week 1: Intro to Neural Networks**
 
-  - Using a Neural Network to Control a Synthesizer
-    - DataSet
+  - [Using a Neural Network to Control a Synthesizer](https://learn.flucoma.org/learn/regression-neural-network/)
+    - [DataSet](https://learn.flucoma.org/reference/dataset/)
     - Buffer interface
-    - MLPRegressor
+    - [MLPRegressor](https://learn.flucoma.org/reference/mlpregressor/)
   
-  - Classifying sound based on MFCCs
-    - LabelSet
-    - MLPClassifier
-    - Training-Testing Split
+  - [Classifying sound](https://learn.flucoma.org/learn/classification-neural-network/) based on [MFCC](https://learn.flucoma.org/reference/mfcc/)s
+    - [LabelSet](https://learn.flucoma.org/reference/labelset/)
+    - [MLPClassifier](https://learn.flucoma.org/reference/mlpclassifier/)
+    - [Training-Testing Split](https://learn.flucoma.org/learn/training-testing-split/)
     - JSON I/O
 
 **Week 2: Audio and Statistical Analysis**
 
   - Sorting Sounds Based on Audio Analysis
-    - NoveltySlice
+    - [NoveltySlice](https://learn.flucoma.org/reference/noveltyslice/)
     - NRT buffer analyses
-      - BufSpectralShape
-      - BufPitch
-      - BufLoudness
-      - FluidWaveform
+      - [BufSpectralShape](https://learn.flucoma.org/reference/spectralshape/)
+      - [BufPitch](https://learn.flucoma.org/reference/pitch/)
+      - [BufLoudness](https://learn.flucoma.org/reference/loudness/)
+      - FluCoMa Waveform Object
     - [BufStats](https://learn.flucoma.org/reference/bufstats/)
       - mean, standard deviation, skewness, kurtosis, order statistics
   
-  - Browsing Sounds in 2 Dimensional Space (Loudness & Centroid)
+  - [Browsing Sounds in 2 Dimensional Space](https://learn.flucoma.org/learn/2d-corpus-explorer/) (Loudness & Centroid)
     - [Batch Processing](https://learn.flucoma.org/learn/batch-processing/)
-    - Plotter
+    - FluCoMa Plotter Object
     - [KDTree](https://learn.flucoma.org/reference/kdtree/) for nearest neighbour lookup
 
 **Week 3: Slicing Audio & Finding "Novelty"**
 
   - Slicers
-    - (Buf)AmpSlice
-    - (Buf)OnsetSlice
-    - (Buf)TransientSlice
-    - (Buf)AmpGate
+    - [AmpSlice](https://learn.flucoma.org/reference/ampslice/)
+    - [OnsetSlice](https://learn.flucoma.org/reference/onsetslice/)
+    - [TransientSlice](https://learn.flucoma.org/reference/transientslice/)
+    - [AmpGate](https://learn.flucoma.org/reference/ampgate/)
   
-  - (Buf)[NoveltySlice](https://learn.flucoma.org/reference/noveltyslice/) & Slicer Feature Curves
+  - [NoveltySlice](https://learn.flucoma.org/reference/noveltyslice/) & Slicer Feature Curves
     - What is "Novelty"
-    - (Buf)NoveltyFeature
-    - (Buf)AmpFeature
-    - (Buf)OnsetFeature
+    - [NoveltyFeature](https://learn.flucoma.org/reference/noveltyfeature/)
+    - [AmpFeature](https://learn.flucoma.org/reference/ampfeature/)
+    - [OnsetFeature](https://learn.flucoma.org/reference/onsetfeature/)
     
 **Week 4: Why Machines Listen and Learn Differently from Humans**
 
   - Comparing Human & Machine Assumptions of Machine Listening
     - [Why Scale](https://learn.flucoma.org/learn/why-scale/)
     - Linear vs. Logarithmic Scaling
-    - Log Centroid
-    - MelBands
-    - MFCC
-    - Chroma
+    - [Log Centroid](https://learn.flucoma.org/reference/spectralshape/)
+    - [MelBands](https://learn.flucoma.org/reference/melbands/)
+    - [MFCC](https://learn.flucoma.org/reference/mfcc/)
+    - [Chroma](https://learn.flucoma.org/reference/chroma/)
   
   - The Musical Implications of Scaling ([Comparing Scalers](https://learn.flucoma.org/learn/comparing-scalers/))
-    - Normalize
-    - Standardize
-    - Robust Scaler
+    - [Normalize](https://learn.flucoma.org/reference/normalize/)
+    - [Standardize](https://learn.flucoma.org/reference/standardize/)
+    - [Robust Scaler](https://learn.flucoma.org/reference/robustscale/)
 
 **Week 5: Dimensionality Reduction**
 
   - Reducing Large Analyses to a 2 Dimensional Performance Space
     - [Proximity as Similarity](https://learn.flucoma.org/learn/why-scale/)
     - Other Measures of Distance
-    - Principal Component Analysis
+    - [Principal Component Analysis](https://learn.flucoma.org/reference/pca/)
   
   - Uniform Manifold Approximation and Projection ([UMAP](https://learn.flucoma.org/reference/umap/))
 
@@ -464,28 +517,28 @@ This course schedule is designed for a 14 week semester with two 90-minute class
     - [Removing Outliers with BufStats](https://learn.flucoma.org/learn/removing-outliers/)
 
   - SQL-type Queries
-    - DataSetQuery
+    - [DataSetQuery](https://learn.flucoma.org/reference/datasetquery/)
 
 **Week 10: Signal Decomposition**
   
   - Signal Decomposition
     - [Sines](https://learn.flucoma.org/reference/sines/)
-    - Transients
+    - [Transients](https://learn.flucoma.org/reference/transients/)
 
   - Harmonic-Percussive Source Separation
     - [HPSS](https://learn.flucoma.org/reference/hpss/)
   
 **Week 11: Non-negative Matrix Factorization**
 
-  - Decomposing Audio into Sound Object Components
-    - [BufNMF](https://learn.flucoma.org/learn/bufnmf/) (Bases and Activations)
-    - NMFFilter
-    - NMFMatch
-    - BufNMFCross?
+  - [Decomposing Audio](https://learn.flucoma.org/learn/bufnmf/) into Sound Object Components
+    - [BufNMF](https://learn.flucoma.org/reference/bufnmf/) (Bases and Activations)
+    - [NMFFilter](https://learn.flucoma.org/reference/nmffilter/)
+    - [NMFMatch](https://learn.flucoma.org/reference/nmfmatch/)
+    - [BufNMFCross]()?
   
   - [Seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) & Over-Decomposing
-    - BufNMFSeed?
-    - NMFMorph?
+    - [BufNMFSeed](https://learn.flucoma.org/reference/bufnmfseed/)?
+    - [NMFMorph](https://learn.flucoma.org/reference/nmfmorph/)?
 
 **Week 12: Advanced Neural Networks**
 
@@ -498,7 +551,7 @@ This course schedule is designed for a 14 week semester with two 90-minute class
 
 **Week 13: Bundling Time**
 
-  - Stats
+  - [Stats](https://learn.flucoma.org/reference/stats/)
     - Leaky Integrators
 
   - Sonically Informed Analysis
