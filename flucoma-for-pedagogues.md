@@ -336,35 +336,90 @@ In addition to pointing at the [Neural Network Parameters](https://learn.flucoma
 
 One might notice in many of the resources above that there are node-and-edge graphs of MLP architectures. We found that these are very useful for learners to concretize a few facets of MLPs: (1) "feed-forward", (2) "back-propagation", (3) "fully-connected layers", (4) numbers of hidden layers and nodes, (5) total number of parameters in an architecture, and more. We also learned that it is important to have a visual representation of the architecture that is _actually used_ in the activity. We use a very basic [graphviz script](https://github.com/flucoma/graphics/tree/main/nn_visualizer) to generate these graphs.
 
-## Stateful Objects
-
-Stateful objects
-Added names to objects (max & pd) (sc already has variable names)
-
 ## Threading
 
 ### Max
 
+TODO 
+
 ### SC
+
+In SuperCollider, many FluCoMa workflows rely heavily on the server's OSC queue. It will be important for FluCoMa learners to become familiar with how the server processes the OSC messages it receives. 
+
+**processBlocking**
+
+In particular, when [performing many buffer operations](https://www.youtube.com/watch?v=sabA8p8Y-Xs&list=PLLzzOXU4pTgIZREPJy3Y6oivWI9x-nVge&index=2), a common workflow is to use the `processBlocking` call for all of the operations which will place each operation in the server OSC queue. This allows for very fast buffer processing because the the operations are all lined up in order and the server moves on to the next one as soon as it completes with the previous (all without any unnecessary `sync` with the language). One way in which this often confuses learners is that if these operations are inside of a loop (that is iterating over slice points perhaps), and the code is printing _which_ slice is currently being analyzed (see below), it will report that it has "completed analyzing" all the slices, when in fact all this suggests is that all of the `processBlocking` operations have been sent to the server.
+
+```js
+fa.doAdjacentPairs{
+  arg start, end, i;
+  var num = end - start;
+  
+  start.postln;
+  end.postln;
+  i.postln;
+
+  // analyze a sound slice for spectral centroid
+  FluidBufSpectralShape.processBlocking(s,~src,start,num,features:spec,select:[\centroid]);
+
+  // get the mean centroid for this sounds slice
+  FluidBufStats.processBlocking(s,spec,stats:stats,select:[\mean]);
+
+  // copy the mean spectral centroid to the appropriate index (destStartFrame) of
+  // the buffer called meancentroids
+  FluidBufCompose.processBlocking(s,stats,destination:meancentroids,destStartFrame:i);
+
+  "completed analyzing slice %".format(i).postln;
+};
+```
+
+One good way of clarifying this for learners is to enforce a `sync` between the language and the server every 100 slices or so using a line of code like `if( ( i % 100 ) == 99 ){ s.sync }`. This will allow the code to post "completed" for 100 slices, but wait until those slices are completed before posting anything else. This clarifies the speed at which the analyses are actually happening, while adding a trivial amount of processing time to the overall analysis.
+
+## Stateful Objects
+
+Many of the FluCoMa data objects hold some state. For example after calling `fit` (or `fitTransform`) on a Normalize object, it holds the minimum and maximum value of each dimension in the fitted DataSet so that it can scale future `transform` calls appropriately. This interface design was based on many of the data processing objects in the Python sci-kit learn package. We found that some FluCoMa learners find it challenging to conceptualize or remember that certain objects are holding a state that will they will need to call upon later. One added feature that may help with conceptualizing objects in this way is the option to _name_ objects in Max and Pure Data (SuperCollider nominally uses variable names to identify objects). 
+
+Named objects may help learners remember that certain objects hold state because they have a sense of it being a non-generic, task-specific object, such as a Normalize object called "norm-pre-pca". This gives it a special sense of purpose and an indicator of what state it holds and where in data processing one would call upon that state. 
 
 ## Fourier Transform & STFT
 
-## Dealing with Time
+As with many audio tasks, the STFT is central to much of how a learner interacts with FluComa. Many times learners can do exciting things, learn a lot about the toolkit, and make great music without reflecting on the FFT processes happening "under the hood". We have found however, that for many of the algorithms in FluCoMa (such as [AudioTransport](https://learn.flucoma.org/reference/audiotransport/), [Sines](https://learn.flucoma.org/reference/sines/), and many more), adjusting STFT settings (`windowSize`, `hopSize`, and `fftSize`) has an important aesthetic impact on the results, and therefore we suggest that it is important to understand what impact these parameters have.
+
+There exists a [wealth of resources](https://learn.flucoma.org/learn/fourier-transform/#related-resources) on the internet for learners to build fluency with the Fourier Transform, so we didn't feel the need to recreate many of these learning tools. We have however, curated a small set of ideas that will be important for FluCoMa learners to consider as their approaching the toolkit, which exist on these two pages:
+
+* [Fourier Transform](https://learn.flucoma.org/learn/fourier-transform/#related-resources)
+* [BufSTFT](https://learn.flucoma.org/reference/bufstft/)
 
 ## Navigating Human & Machine Assumptions
+
+One of the most challenging conceptual hurdles for FluCoMa learners is to reconcile the differences between the way machines and humans listen. What perceptually might seem obvious to a human listener can be very challenging for a machine to discern. Newcomers to machine listening often set out to perform a task making many assumptions about how a system will work, what data they will use, and how they will compute a result, not realizing that what they _think_ they're telling the machine or asking it to compute is quite different from what it will give back in return.
+
+**Machine Listening: Pitch**
+
+One activity that has been quite successful is a simple "listening test". We ask a class of learners to sing the pitch of [this](https://learn.flucoma.org/learn/weighting-stats/01_src.mp3) sound file. Most listeners will sing the right pitch class but down a few octaves from the actual frequency. The first thing to point out is that they were only singing the pitch from the part of the sound file that was _most_ pitched. They didn't even attempt to sing the "pitch" during the scratchy parts. This [chart](https://learn.flucoma.org/learn/weighting-stats/03_src_with_pitch.jpg) shows the result of a [Pitch](https://learn.flucoma.org/reference/pitch/) analysis on the buffer. One can see where the pitch is stable (the parts that the listeners sung), but also that there is a lot more "pitch" analysis there. The machine listens to all of it (and reports back on all of it). This is because as humans we're constantly engaged in multi-modal listening and switching between different ways of perceiving sound, depending on which seems appropriate or useful at a given moment. When the sound file is making scratchy sounds, we as humans don't even register it as a "pitch" to sing, but a machine does.
+
+Another useful outcome of this activity can be acknowledged when discussing [Distance as Similarity](https://learn.flucoma.org/learn/why-scale/)
 
 Know Your Data  
 Nearest Neighbor
 Scaling & Distances
 Stats  
 Histograms
-Clustering as an example  
+Clustering as an example 
 
 ## De-Myth-ifying Machine Learning
 
+## Dealing with Time
+
+TODO 
+
 # Advanced Activities & Examples
 
+During longer workshops, we were able to demonstrate and code-along more advanced topics. All of these have occurred _after_ doing all of the 101 activities.
+
 ## MLPRegressor with Audio Descriptors as Input
+
+
 
 ## Wavetable Autoencoder
 
@@ -565,6 +620,6 @@ This course schedule is designed for a 14 week semester with two 90-minute class
 
 # Relevance to Contemporary Society
 
-# More Information
+TODO
 
 # Links to Pedagogical Materials
