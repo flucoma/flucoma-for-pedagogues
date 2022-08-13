@@ -72,9 +72,11 @@ The international community of FluCoMa users primarily communicates through the 
 
 As described above, the FluCoMa learning resources are generally tiered to offer learners the degree of detail needed at a given moment to pursue a creative idea. One way in which our tiered approach is executed is cross referencing the different learning resources. The help files in each creative coding environment (CCE) link to their respective web reference, from which a learner can be linked to many more resources. The web reference, learn articles, and explore articles all cross-link with each other so that a learner reading a web reference might discover an explore article about a musician's use of an object, and from there discover a learn article that might help them pursue the creative use they just learned about. Different learners will need different degrees of technical specificity, inspiration, and modes of engagement at different times. We hope that setting someone "loose" on the website will enable them to find uses of FluCoMa that are meaningful to them as well as the knowledge needed to support them.
 
-### CCE Specific Objects
+<!-- ### CCE Specific Objects
 
-<!-- TODO -->
+ TODO (Ted)
+ 
+ -->
 
 # "101" Tutorials
 
@@ -98,7 +100,7 @@ Often the first activity we engage with students is to build a neural network th
     - a MLPRegressor object with many arguments already specified
 5. Let the learners play with the instrument (and augment it in their own way).
 
-The starter patch is important here so that we don't spend too much time doing CCE-specific boiler plate code but instead get right into using FluCoMa. It also ensures that learners have a synthesizer to make sound with right away when the code-along is complete. Because there are many arguments to the MLPRegressor object and each of them can require a fair amount of explanation to use well--and in coordination with each other--we've chosen to provide the arguments to the MLPRegressor programmed into the starter patch. During the lesson we tell the learners that these arguments can be explored further in a future lesson and/or on our [learn article](https://learn.flucoma.org/learn/mlp-parameters/).
+> _The starter patch is important here so that we don't spend too much time doing CCE-specific boiler plate code but instead get right into using FluCoMa. It also ensures that learners have a synthesizer to make sound with right away when the code-along is complete. Because there are many arguments to the MLPRegressor object and each of them can require a fair amount of explanation to use well--and in coordination with each other--we've chosen to provide the arguments to the MLPRegressor programmed into the starter patch. During the lesson we tell the learners that these arguments can be explored further in a future lesson and/or on our [learn article](https://learn.flucoma.org/learn/mlp-parameters/)._
 
 The extensions of this activity are to:
 
@@ -149,6 +151,7 @@ After completing the MLPRegressor activity, one common extension is to do an act
 ## 2D Sound Browser
 
 **Watch Video Tutorials of this Sequence**
+
 * [in Max](https://youtube.com/playlist?list=PLLzzOXU4pTgJNv3XL_DRQO4N9xXc0pJEu)
 * [in SuperCollider](https://youtube.com/playlist?list=PLLzzOXU4pTgIZREPJy3Y6oivWI9x-nVge)
 
@@ -167,6 +170,8 @@ As with the neural network "101" tutorials, this one also often begins with an e
 * [Show Data Processing Steps](https://www.youtube.com/watch?v=-VVdF1s7AZ4)
 * [UMAP in 1 Dimension Path & Video](https://www.youtube.com/watch?v=jdF4sW1aVDE)
 * [Travelling Sales Person Path](https://www.youtube.com/watch?v=20HOHmRj7Kg)
+
+**Lesson Plan:**
 
 1. Load the sound file we begin with into a buffer ("Nicol-LoopE-M.wav", which comes with the FluCoMa Toolkit).
 
@@ -201,7 +206,7 @@ As with the neural network "101" tutorials, this one also often begins with an e
 
 **MFCC Analysis and UMAP Dimensionality Reduction**
 
-_This next set of steps tends to work will with a more diverse corpus of sounds, so before moving on one might replace the buffer that has the drump loop with a buffer of many more sounds--perhaps_ all _the sounds in FluCoMa's example sounds folder._
+> _This next set of steps tends to work will with a more diverse corpus of sounds, so before moving on one might replace the buffer that has the drump loop with a buffer of many more sounds--perhaps_ all _the sounds in FluCoMa's example sounds folder._
 
 12. Replace the [BufSpectralShape](https://learn.flucoma.org/reference/spectralshape/) and BufLoudness analyses with one BufMFCC analysis using 13 coefficients and `startCoeff` = 1.
     - We find that questions like, "But what _is_ an MFCC?", are very common. Depending on how much time is available, this may be a good opportunity to explain MFCCs more in depth using the [web reference](https://learn.flucoma.org/reference/mfcc/) and/or [interactive explanation](https://learn.flucoma.org/reference/mfcc/explain/).
@@ -210,7 +215,7 @@ _This next set of steps tends to work will with a more diverse corpus of sounds,
 15. Plot it in Plotter.
     - This moment offers a good opportunity to discuss two important points of UMAP: `numNeighbours` and `minDist`. Users should adjust these, recompute UMAP, and replot. As with many of these iterative tweaks, remind them that the goal is to make music so their assessment criteria can simply be whatever settings feel most creatively useful!
 
-_Up to this point is the main sequence of steps that we go through with many learners. The following section that adds Concatenative Synthesis is sometimes used as a follow-up. During workshops this was usually after lunch or the next day._
+> _Up to this point is the main sequence of steps that we go through with many learners. The following section that adds Concatenative Synthesis is sometimes used as a follow-up. During workshops this was usually after lunch or the next day._
 
 **Concatenative Synthesis**
 
@@ -244,7 +249,7 @@ They can also be found in these example files:
     - One nice thing to do here is to mix and match bases and activations. Use NMFFilter with a basis from one drum instrument to filter pink noise while using an activation from a different drum instruments to control the loudness. 
     - Also, pair the correct basis and activation from each drum hit to "resynthesize" the original instrument using pink noise as a source. Explain that this is kind of how BufNMF actually performs resynthesis, but using the reconstructed magnitude spectrum of the original (and the phases from the original). (Of course no pink noise is used.) Playing all three faux-pink noise resynthesized instruments at the same is surprisingly convincing and compelling to listen to.
 
-_This is one potential stopping point for this sequence. Learners will have a sense of why the might want to use BufNMF for audio decomposition as well as some intuition for how it is actually operating. In our workshops we've often gone farther than this point, as outlined below._
+> _This is one potential stopping point for this sequence. Learners will have a sense of why the might want to use BufNMF for audio decomposition as well as some intuition for how it is actually operating. In our workshops we've often gone farther than this point, as outlined below._
 
 **NMFFilter**
 
@@ -262,11 +267,11 @@ _This is one potential stopping point for this sequence. Learners will have a se
     - If we wanted to go through this "many-hours-long" sound file and find all the dog barks, what we can do is, first decompose just the first few seconds (which does contain dog barks) into 2 components. What we're hoping will happen is that we'll end up with 2 bases: (1) a spectral template of the dog bark and (2) a spectral template of "everything else" (this will work well with these examples--with other soundfiles, it might be necessary or appropriate to do some checking / tweaking, perhaps with [seeding](https://learn.flucoma.org/learn/seeding-nmf/), to make sure you have a spectral template of what you're seeking).
     - Providing the spectral template basis of the dog bark to NMFMatch, run the audio stream of the entire file through NMFMatch to get an activation curve of the dog-bark spectral template for the entire file! This can all be done in real-time during the demonstration.
 
-_This is another potential stopping point. In the workshops we've taught, this was a common place to end our time on NMF, or at least pause a moment for the many questions and excitement the learners will have. If there is time and interest to continue, we've also included some demonstration on [seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) (below)._
+> _This is another potential stopping point. In the workshops we've taught, this was a common place to end our time on NMF, or at least pause a moment for the many questions and excitement the learners will have. If there is time and interest to continue, we've also included some demonstration on [seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) (below)._
 
 **Seeding NMF**
 
-_The sequence below generally follows this [Learn Article](https://learn.flucoma.org/learn/seeding-nmf/)._
+> _The sequence below generally follows this [Learn Article](https://learn.flucoma.org/learn/seeding-nmf/)._
 
 1. Demonstrate that running BufNMF multiple times in a row will often result in similar components (snare drum, kick drum, & hi-hat), but the order in which the occur is unpredictable. 
     - This is because the non-negative matrix factorization process begins from a randomized state, so although it often finds similar solutions, the order of the components will be random. (If appropriate you can note that the algorithm uses stochastic gradient descent.) 
@@ -275,7 +280,7 @@ _The sequence below generally follows this [Learn Article](https://learn.flucoma
 4. Then using these bases as seed we'll use BufNMF to decompose a [short melodic fragment](https://learn.flucoma.org/learn/seeding-nmf/somewhere-over-the-rainbow.mp3) (that uses the tones from this major scale). The result will be eight components: each one based on one of the spectral templates from the sawtooth bases. BufNMF will have one component per note of the major scale that it was seeded with.
 5. One unfortunate circumstance is that the bases BufNMF returns in step 3 will not be in the order of the scale. They'll be in a random order (as explained in step 1). In order to ensure that they will be in order we will seed activations when creating the bases of the sawtooth tones. First, we'll create a [seed for activations](https://learn.flucoma.org/learn/seeding-nmf/00_activation_seeds.jpg) that show _where in time_ (as activations do) the different synth tones occur. Then when using these seed activations on BufNMF with the [eight 1-second sawtooth wave tones](https://learn.flucoma.org/learn/seeding-nmf/00_saw_scale.mp3) as the `source`, the resulting bases of the different scale notes will be in the order expected.
 
-_Understanding this process is best done by also seeing the graphics on the [Seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) Learn Article._
+> _Understanding this process is best done by also seeing the graphics on the [Seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) Learn Article._
 
 6. Now using these ordered bases to seed a BufNMF decomposition of the [melodic fragment](https://learn.flucoma.org/learn/seeding-nmf/somewhere-over-the-rainbow.mp3) will yield components that are in the same order as the bases: ordered according to the scale.
 
@@ -342,9 +347,11 @@ One might notice in many of the resources above that there are node-and-edge gra
 
 ## Threading
 
-### Max
+<!-- ### Max
 
-<!-- TODO  -->
+TODO (James or PA? Someone who knows a lot about Max threading.)
+
+-->
 
 ### SC
 
@@ -354,7 +361,7 @@ In SuperCollider, many FluCoMa workflows rely heavily on the server's OSC queue.
 
 In particular, when [performing many buffer operations](https://www.youtube.com/watch?v=sabA8p8Y-Xs&list=PLLzzOXU4pTgIZREPJy3Y6oivWI9x-nVge&index=2), a common workflow is to use the `processBlocking` call for all of the operations which will place each operation in the server OSC queue. This allows for very fast buffer processing because the the operations are all lined up in order and the server moves on to the next one as soon as it completes with the previous (all without any unnecessary `sync` with the language). One way in which this often confuses learners is that if these operations are inside of a loop (that is iterating over slice points perhaps), and the code is printing _which_ slice is currently being analyzed (see below), it will report that it has "completed analyzing" all the slices, when in fact all this suggests is that all of the `processBlocking` operations have been sent to the server.
 
-```js
+```
 fa.doAdjacentPairs{
   arg start, end, i;
   var num = end - start;
@@ -377,7 +384,7 @@ fa.doAdjacentPairs{
 };
 ```
 
-One good way of clarifying this for learners is to enforce a `sync` between the language and the server every 100 slices or so using a line of code like `if( ( i % 100 ) == 99 ){ s.sync }`. This will allow the code to post "completed" for 100 slices, but wait until those slices are completed before posting anything else. This clarifies the speed at which the analyses are actually happening, while adding a trivial amount of processing time to the overall analysis.
+One good way of clarifying this for learners is to enforce a `sync` between the language and the server every 100 slices or so using a line of code like `if( ( i % 100 ) == 99 ){ s.sync }`. This will allow the code to post "completed" for every 100 slices, but wait until those slices are completed before posting anything else. This clarifies the speed at which the analyses are actually happening, while adding a trivial amount of processing time to the overall analysis.
 
 ## Stateful Objects
 
@@ -446,9 +453,11 @@ Another de-myth-ification that is sometimes engaged is when learners will assume
 
 Framing validation with these benefits in mind can help encourage learners to put in the extra work that it takes.
 
-## Dealing with Time
+<!-- ## Dealing with Time
 
-<!-- TODO  -->
+TODO (I'm thinking that maybe James will want to do this one because he's just been writing some learn articles about it. Or perhaps PA since he's done a lot of thinking about it regarding LPT, etc.)
+
+-->
 
 # Advanced Activities & Examples
 
@@ -456,11 +465,36 @@ During longer workshops, we were able to demonstrate and code-along more advance
 
 ## MLPRegressor with Audio Descriptors as Input
 
-A "201" activity that we've done using MLPRegressor involves using audio 
+A "201" activity that we've done using MLPRegressor involves using real time audio analyses as input to the neural network. The completed code can be found at the links below. Similar to other activities, we have used a [slides presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/mlp-with-descriptors-input.pdf) to explain in the abstract what we will be coding before creating the code together with the learners as a code along. This activity offers a good opportunity to extend the learners' knowledge of MLPs in a few ways:
+
+* The process of making a DataSet is somewhat more automated and the nature of the data demands more thoughtful consideration of the DataSet. Generally speaking, completely randomizing the synthesis parameters used can lead to poorer results than selecting a handful, or more likely, placing bounds or conditions on the randomness to provide parameters that are more "likely".
+* This is a harder task for the neural network to learn than the tasks in the "101" examples so training will be more difficult. This makes it an excellent opportunity to cover the [advanced neural network](#advanced-neural-networks) topics.
+* The result is quite interesting, although not completely compelling for a lot of newcomers. This offers the opportunity to reflect on _how_ the neural network might be able to (or not) learn from this data, what data we are showing it and what it means, and how it might be improved: more data? less data? different data? different statistics? different MLP parameters? different algorithm altogether?
+
+**Completed Code Examples:**
+
+* [MLPRegressor with Descriptors example for SuperCollider]()
+* [MLPRegressor with Descriptors example for Max]()
 
 ## Wavetable Autoencoder
 
+This idea is based on an insight from a [learner](https://github.com/tmhglnd) in an early workshop. The insight was that since the MLPRegressor writes predictions directly into a buffer, to also use that buffer to read out of as a wavetable. The initial idea was very similar to the [101 MLPRegressor activity](#mlpregressor) but rather than predicting synthesis parameters, it predicted wavetables that then could be interpolated between while also being heard.
+
+This lead to an idea to try to train an [autoencoder](https://towardsdatascience.com/auto-encoder-what-is-it-and-what-is-it-used-for-part-1-3e5c6f017726) to create a latent space of a set of wavetables. Navigating through the latent space would morph the wavetable shape in a musically and navigable way. As you can see in the steps below, this introduces many more concepts that are advanced but build on knowledge gained in previous tutorials.
+
+1. The "wavetables" used in the example are excerpts 2048 samples long taken from the audio file of trombone tones that is included in the FluCoMa toolkit ("Olencki-TenTromboneLongTones-M.wav"). 
+2. Because each one of these is a data point with 2048 dimensions [PCA](https://learn.flucoma.org/reference/pca/) is first used to reduce the number of dimensions to around 150 (something like around 95% of the variance can be maintained). 
+3. The autoencoder is then trained with this DataSet as the input and output with a latent space of 2 (`hiddenLayers` is something like [80,40,2,40,80]).
+4. Then when making predictions, the `tapIn` and `tapOut` arguments need to be set and used accordingly, as well as the `inverseTransformPoint` method for PCA.
+
+**Completed Code Examples:**
+
+* [Wavetable Autoencoder example for SuperCollider]()
+* [Wavetable Autoencoder example for Max]()
+
 ## UMAP 1D
+
+One more demonstration that 
 
 # Multi-Day Workshops
 
@@ -489,18 +523,7 @@ At the end of this semester, **students will be able to**:
 3. Create idiosyncratic musical expressions that use machine listening and machine learning.
 4. Understand the limitations of machine listening and machine learning. Be able to assess machine accuracy and analyze human assumptions.
 5. Express intuitions about selecting algorithms and approaches for given tasks.
-6. Relate knowledge and intuition about machine learning and machine automation to broader applications of these technologies in society.
-
-**BIBLIOGRAPHY**
-
-Regarding SWBAT #6, **we believe that the enhanced understanding of data, data science, and machine learning that this course provides should be used as a lens to consider how these tools often uphold ineqalities, injustices, and hegemonies in our socieites.** Below is a list of books (in no particular order) that provide many examples of contemporary technologies negative impacting marginalized communities. Many additionally offer directions for how to approach and use data science ethically. We recommend selecting a book or readings from these books to augment the course. Each of these is written for different audiences, so selecting which is best is at the instructor's discretion.
-
-  - _Data Feminism_ by Catherine D'Ignazio and Lauren F. Klein. 
-  - _Weapons of Math Destruction_ by Cathy O'Neil
-  - _Hello World_ by Hannah Fry
-  - _Revolutionary Mathematics_ by Justin Joque
-  - _Blockchain Chicken Farm: And Other Stories of Tech in China's Countryside_ by Xiaowei Wang
-  - _The Alignment Problem_ by Brian Christian
+6. Relate knowledge and intuition about machine learning and machine automation to [broader applications of these technologies in society](#relevance-to-contemporary-society).
 
 **REPERTOIRE**
 
@@ -657,6 +680,13 @@ This course schedule is designed for a 14 week semester with two 90-minute class
 
 # Relevance to Contemporary Society
 
-<!-- TODO -->
+We believe that the enhanced understanding of data, data science, and machine learning that learning FluCoMa provides should be used as a lens to consider how these tools often uphold inequalities, injustices, and hegemonies in our societies. Below is a list of books (in no particular order) that provide many examples of contemporary technologies negative impacting marginalized communities. Many additionally offer directions for how to approach and use data science ethically. We recommend selecting a book or readings from these books to augment learning. Each of these is written for different audiences, so selecting which is best is at the instructor/learner's discretion.
+
+* _Data Feminism_ by Catherine D'Ignazio and Lauren F. Klein. 
+* _Weapons of Math Destruction_ by Cathy O'Neil
+* _Hello World_ by Hannah Fry
+* _Revolutionary Mathematics_ by Justin Joque
+* _Blockchain Chicken Farm: And Other Stories of Tech in China's Countryside_ by Xiaowei Wang
+* _The Alignment Problem_ by Brian Christian
 
 # Links to Pedagogical Materials
