@@ -28,14 +28,7 @@ Tiered learning resources allow the learner to pursue knowledge as far as they d
 
 ## Music-Forward Resources
 
-Because of the specificity of our target learner (a creative coding musician), we have always tried to keep our learning materials and examples musically oriented (as can be seen below). We aim to have the help files and example code make sound in a creative way. When possible we always offer test files and thought experiments that will feel familiar and relevant to our learner such as instrument samples, drum loops, synthesizer settings, measures of pitch and loudness, etc. We hope this not only explains an object and its interface, but also provides some copy-and-paste code to get started quickly, and generally gets the creative juices flowing while a user is engaging in the learning process.
-
-## Active Learning
-
-Bringing their own corpus, datasets, synthesizers
-Using creativity as part of the assignments
-Cross-environment peer learning
-Problem Solving 
+Because of the specificity of our target learner (a creative coding musician), we have always tried to keep our learning materials and examples musically oriented (as can be seen below). We aim to have the help files and example code make sound in a creative way. When possible we always offer test files and thought experiments that will feel familiar and relevant to our learner such as [instrument samples](https://learn.flucoma.org/reference/noveltyfeature/), [drum hits](https://learn.flucoma.org/reference/bufstats/#a-musical-example), [MIDI notes](https://learn.flucoma.org/reference/bufstats/#order-statistics), [synthesizer settings](https://learn.flucoma.org/learn/regression-neural-network/), [measures of frequency and loudness](https://learn.flucoma.org/learn/why-scale/#plotting-sound-slices-where-1-hz--1-db), etc. We hope this not only explains an object and its interface, but also provides some copy-and-paste code to get started quickly, and generally gets the creative juices flowing while a user is engaging in the learning process.
 
 # Ecosystem of Learning Materials
 
@@ -81,6 +74,8 @@ As described above, the FluCoMa learning resources are generally tiered to offer
 
 ### CCE Specific Objects
 
+<!-- TODO -->
+
 # "101" Tutorials
 
 After teaching numerous workshops we have identified a few class plans that work well to get new learners excited and making sound as well as laying a foundation of facility with FluCoMa to support further activities and/or self-guided learning. A few of these lesson plans are described briefly below.
@@ -88,8 +83,9 @@ After teaching numerous workshops we have identified a few class plans that work
 ## MLPRegressor
 
 **Watch a Video Tutorial of this Lesson Plan**
+
 * [in Max](https://www.youtube.com/watch?v=XfNZzQPdPG0)
-* [in SuperCollider]()
+* [in SuperCollider](https://www.youtube.com/watch?v=mxmMBvi3Cb0)
 
 Often the first activity we engage with students is to build a neural network that performs regression to control a synthesizer. This gets learners making sound quickly and uses part of the toolkit that is often quite exciting for newcomers to machine learning to engage with (neural networks). This activity takes any where from 40-90 minutes depending on the class of learners. Here is a brief outline of the lesson plan:
 
@@ -138,6 +134,7 @@ Not only does this activity quickly provide learners with a machine learning ins
 After completing the MLPRegressor activity, one common extension is to do an activity with the MLPClassifier. Depending on the group of learners and how much time is available, sometimes this would only include opening up the classifier demonstration file and doing a quick training and testing, along the way relating it to what was just done with the MLPRegressor activity. If time allowed and there is interest we performed a more involved activity similar to the MLPRegressor: we train the MLPClassifier to classify timbres, distinguishing between provided trombone and oboe recordings.
 
 **Watch a Video Tutorial of this Lesson Plan**
+
 * [in SuperCollider](https://www.youtube.com/watch?v=Y1cHmtbQPSk)
 * [in Max](https://www.youtube.com/watch?v=cjk9oHw7PQg)
 
@@ -227,8 +224,8 @@ The steps outlined below pretty closely follow these two Learn articles:
 
 They can also be found in these example files:
 
-* [NMFExamples for Max]()
-* [NMFExamples for SuperCollider]()
+* [NMF Examples for Max]()
+* [NMF Examples for SuperCollider]()
 
 1. Listen to the [Nicol drump loop](https://learn.flucoma.org/audio/Nicol-LoopE-M.mp3) (that comes with the FluCoMa Toolkit). Look at the [spectrogram](https://learn.flucoma.org/learn/bufnmf/00_original_spectrogram_mel_color.png) and identify where in the spectrum and in time the [different drum instruments (roughly) exist](https://learn.flucoma.org/learn/bufnmf/00_boxes_over_nicol-01.png). Notice that because there is a lot of overlap both in spectral space and in time, trying to "decompose" this buffer using a slicer or a spectral filter wouldn't be very successful. There will be many components that would contains _some_ of more than one drum instrument's sound.
 2. Use BufNMF to decompose the drum loop into two components and listen to what that returns. Make sure the learners know that that the extent of information that is given to the NMF algorithm is the mono `source` drum loop and the number "two".
@@ -340,7 +337,7 @@ One might notice in many of the resources above that there are node-and-edge gra
 
 ### Max
 
-TODO 
+<!-- TODO  -->
 
 ### SC
 
@@ -406,7 +403,9 @@ Many workflows in FluCoMa require the use of statical summaries of sound slices,
 
 [BufStats](https://learn.flucoma.org/reference/bufstats/) is perhaps the most commonly used object in FluCoMa and therefore has a somewhat involved reference page. Many of the statistics available might be familiar to learners (mean, median, minimum, and maximum), while others might be new (standard deviation, skewness, kurtosis, derivatives, etc.). The "101" tutorials and many of the other workflows don't use these more advanced statistical tools and therefore in teaching FluCoMa, we've opted to only focus on a few. During the "101" tutorials, many moments arise that are useful for reflecting on the statistical analyses being used and how they affect the sonic results being heard. A few examples are [reflecting on what it means to have an average spectral centroid of a sound slice](https://youtu.be/sabA8p8Y-Xs?t=1311) and [using the maximum value of an analysis rather than the mean](https://youtu.be/qom6x1u4_6A?t=1437).
 
-BufStats has many more features that are somewhat less explored and probably not appropriate for learners just getting acquainted with FluCoMa. There are few Learn Articles that cover these topics in musicianly ways including [Weighting Stats](https://learn.flucoma.org/learn/weighting-stats/) and [Outliers](https://learn.flucoma.org/learn/outliers/). It is also important to convey to learners, as is stated on the [BufStats](https://learn.flucoma.org/reference/bufstats/) page, "_While it can be difficult to discern how to use some of these analyses practically (i.e., what does the kurtosis of the first derivative of spectral centroid indicate musically?), these statistical summaries can sometimes represent differences between analyses that dimensionality reduction and machine learning algorithms can pick up on. Including these statistical descriptions in training or analysis may provide better distinction between data points._"
+BufStats has many more features that are somewhat less explored and probably not appropriate for learners just getting acquainted with FluCoMa. There are few Learn Articles that cover these topics in musicianly ways including [Weighting Stats](https://learn.flucoma.org/learn/weighting-stats/) and [Outliers](https://learn.flucoma.org/learn/outliers/). It is also important to convey to learners, as is stated on the [BufStats](https://learn.flucoma.org/reference/bufstats/) page, 
+
+> _While it can be difficult to discern how to use some of these analyses practically (i.e., what does the kurtosis of the first derivative of spectral centroid indicate musically?), these statistical summaries can sometimes represent differences between analyses that dimensionality reduction and machine learning algorithms can pick up on. Including these statistical descriptions in training or analysis may provide better distinction between data points._
 
 **"Know Your Data"**
 
@@ -430,9 +429,19 @@ One more concrete example of how human and machine assumptions differ comes from
 
 ## De-Myth-ifying Machine Learning
 
+Sometimes we have questions from learners that sound something like, "I want X to do Y. How can FluCoMa do this?". At this point, our pedagogical step is to break down the goal into smaller and more specific questions and tasks that we can start approaching together with the learner. This process often reveals the assumptions that the learner might be making about how audio analyses work, or what a machine will be able to perceive, or how long an analysis or algorithm might take, and all of the tradeoffs involved in making decisions about the process. Sometimes the question transforms from "How can FluCoMa do this?" to "Can FluCoMa do this?" at which point perhaps there's a different tool that we can point them to or help them realize that their goal is too lofty--that it stems from a belief that "AI can do anything" or "throw it at a neural network and it'll figure it out". Usually this process enriches the learners ideas about what is possible with FluCoMa (even if it's not necessarily what they hoped) and provides a lot of possibilities for investigation.
+
+Another de-myth-ification that is sometimes engaged is when learners will assume that the machine learning _is_ performing some magic. This is often in the form of learners not _validating_ or testing the machine learning model or the results of their algorithm. The first disclaimer to make is that, as artists, we're interested in artistically compelling experiences, so regardless of what the algorithm is or isn't doing, if it sounds good, keep it. It is also important to test the systems that we build and see if they are doing what we think they're doing. This is important for a few reasons:
+
+* It can reveal our assumptions and/or misunderstandings about _how_ things work, providing opportunities to deeper our knowledge and skills.
+* It can offer ways to improve our system to get even closer to our desired outcome.
+* It can reveal nuances in the system that might offer more paths of exploration and creativity.
+
+Framing validation with these benefits in mind can help encourage learners to put in the extra work that it takes.
+
 ## Dealing with Time
 
-TODO 
+<!-- TODO  -->
 
 # Advanced Activities & Examples
 
@@ -440,7 +449,7 @@ During longer workshops, we were able to demonstrate and code-along more advance
 
 ## MLPRegressor with Audio Descriptors as Input
 
-
+A "201" activity that we've done using MLPRegressor involves using audio 
 
 ## Wavetable Autoencoder
 
@@ -610,7 +619,7 @@ This course schedule is designed for a 14 week semester with two 90-minute class
     - [BufNMF](https://learn.flucoma.org/reference/bufnmf/) (Bases and Activations)
     - [NMFFilter](https://learn.flucoma.org/reference/nmffilter/)
     - [NMFMatch](https://learn.flucoma.org/reference/nmfmatch/)
-    - [BufNMFCross]()?
+    - [BufNMFCross](https://learn.flucoma.org/reference/bufnmfcross/)?
   
   - [Seeding NMF](https://learn.flucoma.org/learn/seeding-nmf/) & Over-Decomposing
     - [BufNMFSeed](https://learn.flucoma.org/reference/bufnmfseed/)?
@@ -641,6 +650,6 @@ This course schedule is designed for a 14 week semester with two 90-minute class
 
 # Relevance to Contemporary Society
 
-TODO
+<!-- TODO -->
 
 # Links to Pedagogical Materials
