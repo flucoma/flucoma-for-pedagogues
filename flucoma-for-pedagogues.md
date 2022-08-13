@@ -89,8 +89,8 @@ After teaching numerous workshops we have identified a few class plans that work
 
 Often the first activity we engage with students is to build a neural network that performs regression to control a synthesizer. This gets learners making sound quickly and uses part of the toolkit that is often quite exciting for newcomers to machine learning to engage with (neural networks). This activity takes any where from 40-90 minutes depending on the class of learners. Here is a brief outline of the lesson plan:
 
-1. Share a [real world example](https://learn.flucoma.org/examples/teaching-material/regressor-example.pdf) (including watching a [performance excerpt](https://vimeo.com/565771489)) of why someone might want to use a system like this.
-2. Using a [slides presentation](https://learn.flucoma.org/examples/teaching-material/regressor-process.pdf) step through how we will be collecting training data and training the neural network, including some intuition about how the training process works.
+1. Share a [real world example](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-example.pdf) (including watching a [performance excerpt](https://vimeo.com/565771489)) of why someone might want to use a system like this.
+2. Using a [slides presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-process.pdf) step through how we will be collecting training data and training the neural network, including some intuition about how the training process works.
 3. Open up the CCE of choice and demonstrate a completed version of the instrument we're about to code.
 4. Code the instrument together, as a code-along, starting from a "starter patch" that has a few key items already in place:
     - a synthesizer to control
@@ -138,8 +138,8 @@ After completing the MLPRegressor activity, one common extension is to do an act
 * [in SuperCollider](https://www.youtube.com/watch?v=Y1cHmtbQPSk)
 * [in Max](https://www.youtube.com/watch?v=cjk9oHw7PQg)
 
-1. Share a [real world example](https://learn.flucoma.org/examples/teaching-material/classifier-example.pdf) (including watching a performance excerpt, this one has a [before and after](https://youtu.be/8QtvjMUGGB8)) of why someone might want to use a system like this.
-2. Using a [slides presentation](https://learn.flucoma.org/examples/teaching-material/classifier-process.pdf) step through how we will be collecting training data and training the neural network, including some intuition about how the training process works.
+1. Share a [real world example](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/classifier-example.pdf) (including watching a performance excerpt, this one has a [before and after](https://youtu.be/8QtvjMUGGB8)) of why someone might want to use a system like this.
+2. Using a [slides presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/classifier-process.pdf) step through how we will be collecting training data and training the neural network, including some intuition about how the training process works.
 3. Open up the CCE of choice and demonstrate a completed version of what we're about to code.
 4. Code-along, starting from a "starter patch" that has a few key items already in place:
     - the sound files containing different trombone and oboe sounds
@@ -160,6 +160,13 @@ Many of the common practices with FluCoMa involve:
 4. plotting slices in a two dimensional space to perform with or build understanding about the audio that has been analyzed.
 
 Because these steps can be applied in various workflows and branch towards many diverse projects, we've created a learning sequence that steps through each, building on them in order. This is a longer sequence of activities that usually takes at least 2 hours, often more. Because it is a lot of information and may not be possible to get through it all with limited time, or because it would be better spread out over multiple days, we've identified a few stopping points, "off ramps", and extensions that can surround this activity to suit it to the group of learners present. The sequence of activities with these variations is outlined below.
+
+As with the neural network "101" tutorials, this one also often begins with an example of a creative application of the workflow. [This Keynote Presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/quartet+(by+Ted+Moore).key) (which includes a few videos) has been used in describing this project. Some corresponding videos can also be found at the links below, as well as in the last section of the Explore Article, [Levels of Translation](https://learn.flucoma.org/explore/moore/).
+
+* [Full Work](https://www.youtube.com/watch?v=C0FBNLy4NCM)
+* [Show Data Processing Steps](https://www.youtube.com/watch?v=-VVdF1s7AZ4)
+* [UMAP in 1 Dimension Path & Video](https://www.youtube.com/watch?v=jdF4sW1aVDE)
+* [Travelling Sales Person Path](https://www.youtube.com/watch?v=20HOHmRj7Kg)
 
 1. Load the sound file we begin with into a buffer ("Nicol-LoopE-M.wav", which comes with the FluCoMa Toolkit).
 
@@ -188,7 +195,7 @@ Because these steps can be applied in various workflows and branch towards many 
 
 9. Notice that the Plotter outputs the mouse position _in the ranges specified_ by the user.
 10. Fit a KDTree to the analyses DataSet and use it to find the point nearest the mouse, `highlight` that point, and play back that slice.
-    - When clicking and dragging on the plotter, the learner will notice that the highlighted point doesn't seem to track with the mouse as expected. This is because the visual perception of nearness in the Plotter doesn't correspond to the greatly mismatched scales in the two dimensions. This is another good opportunity to raise awareness about "know your data", particularly through the [Why Scale? Distance as Similarity](https://learn.flucoma.org/learn/why-scale/) web page. The content on this page was first expressed as [slide presentation](), which could be used instead.
+    - When clicking and dragging on the plotter, the learner will notice that the highlighted point doesn't seem to track with the mouse as expected. This is because the visual perception of nearness in the Plotter doesn't correspond to the greatly mismatched scales in the two dimensions. This is another good opportunity to raise awareness about "know your data", particularly through the [Why Scale? Distance as Similarity](https://learn.flucoma.org/learn/why-scale/) web page. The content on this page was first expressed as [slide presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/scaling.pdf), which could be used instead.
 11. Normalize the DataSet so it it can be displayed in Plotter's default normalized space and the KDTree lookup of the mouse position tracks better.
     - This is a potential stopping point where users can, again, include their own sounds and tweak parameters. Students could organize into small groups and give short improvised performances using idiosyncratic sounds with this performance instrument.
 
@@ -323,11 +330,11 @@ Learns often follow up the [neural network 101 activity](#mlpregressor) with que
 
 **Building Intuition about How Neural Networks Learn**
 
-The sequence of explanation that we've used for both the [MLPRegressor](regressor-process.pdf) and [MLPClassifier](classifier-process.pdf) seems to work quite well for giving learners intuition about the training process of an MLP. These explanations can be seen at the beginning of the the [MLPRegressor](https://learn.flucoma.org/learn/regression-neural-network/) and [MLPClassifier](https://learn.flucoma.org/learn/classification-neural-network/) tutorial videos.
+The sequence of explanation that we've used for both the [MLPRegressor](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-process.pdf) and [MLPClassifier](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/classifier-process.pdf) seems to work quite well for giving learners intuition about the training process of an MLP. These explanations can be seen at the beginning of the the [MLPRegressor](https://learn.flucoma.org/learn/regression-neural-network/) and [MLPClassifier](https://learn.flucoma.org/learn/classification-neural-network/) tutorial videos.
 
 **MLP Parameters**
 
-In addition to pointing at the [Neural Network Parameters](https://learn.flucoma.org/learn/mlp-parameters/) article, when we have had time in workshops, we've also allocated some time to [explaining the parameters in more detail](mlp-parameters.pdf).
+In addition to pointing at the [Neural Network Parameters](https://learn.flucoma.org/learn/mlp-parameters/) article, when we have had time in workshops, we've also allocated some time to [explaining the parameters in more detail](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/mlp-parameters.pdf). A very useful site for explaining and playing with the `momentum` parameter can be found on [distill](https://distill.pub/2017/momentum/).
 
 **Visualizing a MLP**
 
