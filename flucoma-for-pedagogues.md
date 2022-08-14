@@ -76,12 +76,18 @@ As described above, the FluCoMa learning resources are generally tiered to offer
 
 Pedagogues should be aware that there are a few objects in FluCoMa that are CCE specific in name and/or implementation because of CCE differences. These objects diverge from FluCoMa's philosophy of cross-environment parity in order to ensure workflows in the toolkit are idiomatic and _Fluid_ for beginner and expert users.
 
++----------------+---------------+-------------------+-----------------------------------------------------------------+
 | **Max**        | **Pure Data** | **SuperCollider** |                                                                 |
-| :---:          | :---:         | :---:             | :---                                                            |
++================+===============+===================+=================================================================+
 | fluid.list2buf | <!-- TODO --> | FluidKrToBuf      | _writing control information into a buffer_                     |
+|                |               |                   |                                                                 |
++----------------+---------------+-------------------+-----------------------------------------------------------------+
 | fluid.buf2list |               | FluidBufToKr      | _reading control information out of a buffer_                   |
++----------------+---------------+-------------------+-----------------------------------------------------------------+
 | fluid.plotter  |               | FluidPlotter      | _similar functionality and syntax but divergent implementation_ |
++----------------+---------------+-------------------+-----------------------------------------------------------------+
 | fluid.waveform |               | FluidWaveform     | _similar functionality and syntax but divergent implementation_ |
++----------------+---------------+-------------------+-----------------------------------------------------------------+
 
 # "101" Tutorials
 
