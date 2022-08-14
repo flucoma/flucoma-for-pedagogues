@@ -80,7 +80,6 @@ Pedagogues should be aware that there are a few objects in FluCoMa that are CCE 
 | **Max**        | **Pure Data** | **SuperCollider** |                                                                 |
 +================+===============+===================+=================================================================+
 | fluid.list2buf | <!-- TODO --> | FluidKrToBuf      | _writing control information into a buffer_                     |
-|                |               |                   |                                                                 |
 +----------------+---------------+-------------------+-----------------------------------------------------------------+
 | fluid.buf2list |               | FluidBufToKr      | _reading control information out of a buffer_                   |
 +----------------+---------------+-------------------+-----------------------------------------------------------------+
@@ -486,6 +485,7 @@ The creative example often shown as part of the [2D Sound Browser](#2d-sound-bro
 5. Iterate over the 100 millisecond sections of the buffer, playing each one. In our code this is done with a sine shaped window and an overlap of 4 (so the result will be 1/4 the duration of the original).
 
 **Completed Code Example**
+
 * [UMAP 1D example for SuperCollider]()
 <!-- TODO * [UMAP 1D example for Max]() -->
 
