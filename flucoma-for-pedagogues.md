@@ -486,8 +486,8 @@ The creative example often shown as part of the [2D Sound Browser](#2d-sound-bro
 
 **Completed Code Example**
 
-* [UMAP 1D example for SuperCollider]()
-<!-- TODO * [UMAP 1D example for Max]() -->
+* [UMAP 1D example for SuperCollider](https://f003.backblazeb2.com/file/learnassets/examples/umap-1d.scd)
+* [UMAP 1D example for Max](https://f003.backblazeb2.com/file/learnassets/examples/umap-1d.maxpat)
 
 ## MLPRegressor with Audio Descriptors as Input
 
@@ -499,14 +499,14 @@ A "201" activity that we've done using MLPRegressor involves using real time aud
 
 **Completed Code Examples:**
 
-* [MLPRegressor with Descriptors example for SuperCollider]()
-* [MLPRegressor with Descriptors example for Max]()
+* [MLPRegressor with Descriptors example for SuperCollider](https://f003.backblazeb2.com/file/learnassets/examples/umap-1d.scd)
+* [MLPRegressor with Descriptors example for Max](https://f003.backblazeb2.com/file/learnassets/examples/umap-1d.maxpat)
 
 ## Wavetable Autoencoder
 
 This idea is based on an insight from a [learner](https://github.com/tmhglnd) in an early workshop. The insight was that since the MLPRegressor writes predictions directly into a buffer, to also use that buffer to read out of as a wavetable. The initial idea was very similar to the [101 MLPRegressor activity](#mlpregressor) but rather than predicting synthesis parameters, it predicted wavetables that then could be interpolated between while also being heard.
 
-This lead to an idea to try to train an [autoencoder](https://towardsdatascience.com/auto-encoder-what-is-it-and-what-is-it-used-for-part-1-3e5c6f017726) to create a latent space of a set of wavetables. Navigating through the latent space would morph the wavetable shape in a musically and navigable way. As you can see in the steps below, this introduces many more concepts that are advanced but build on knowledge gained in previous tutorials.
+This lead to the idea to train an [autoencoder](https://towardsdatascience.com/auto-encoder-what-is-it-and-what-is-it-used-for-part-1-3e5c6f017726) to create a latent space of a set of wavetables. Navigating through the latent space would morph the wavetable shape in a musically and navigable way. As you can see in the steps below, this introduces many more concepts that are advanced but build on knowledge gained in previous tutorials.
 
 1. The "wavetables" used in the example are excerpts 2048 samples long taken from the audio file of trombone tones that is included in the FluCoMa toolkit ("Olencki-TenTromboneLongTones-M.wav"). 
 2. Because each one of these is a data point with 2048 dimensions, [PCA](https://learn.flucoma.org/reference/pca/) is first used to reduce the number of dimensions to around 150 (something like around 95% of the variance can be maintained). 
@@ -515,8 +515,8 @@ This lead to an idea to try to train an [autoencoder](https://towardsdatascience
 
 **Completed Code Examples:**
 
-* [Wavetable Autoencoder example for SuperCollider]()
-* [Wavetable Autoencoder example for Max]()
+* [Wavetable Autoencoder example for SuperCollider](https://f003.backblazeb2.com/file/learnassets/examples/autoencoder.scd)
+* [Wavetable Autoencoder example for Max](https://f003.backblazeb2.com/file/learnassets/examples/autoencoder.maxpat)
 
 # Multi-Day Workshops
 
