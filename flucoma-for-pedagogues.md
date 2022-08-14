@@ -247,8 +247,8 @@ The steps outlined below pretty closely follow these two Learn articles:
 
 They can also be found in these example files:
 
-* [NMF Examples for Max]()
-* [NMF Examples for SuperCollider]()
+* [NMF Examples for Max](https://f003.backblazeb2.com/file/learnassets/examples/nmf-example.maxpat)
+* [NMF Examples for SuperCollider](https://f003.backblazeb2.com/file/learnassets/examples/nmf-example.scd)
 
 1. Listen to the [Nicol drump loop](https://learn.flucoma.org/audio/Nicol-LoopE-M.mp3) (that comes with the FluCoMa Toolkit). Look at the [spectrogram](https://learn.flucoma.org/learn/bufnmf/00_original_spectrogram_mel_color.png) and identify where in the spectrum and in time the [different drum instruments (roughly) exist](https://learn.flucoma.org/learn/bufnmf/00_boxes_over_nicol-01.png). Notice that because there is a lot of overlap both in spectral space and in time, trying to "decompose" this buffer using a slicer or a spectral filter wouldn't be very successful. There will be many components that would contains _some_ of more than one drum instrument's sound.
 2. Use BufNMF to decompose the drum loop into two components and listen to what that returns. Make sure the learners know that that the extent of information that is given to the NMF algorithm is the mono `source` drum loop and the number "two".
