@@ -10,9 +10,9 @@ geometry: margin=1in
 
 # Introduction
 
-The FluCoMa Toolkit is not limited to the actual code objects that use the "Fluid" prefix. FluCoMa is also a collection of learning resources, code examples, commissioned artworks, musicological articles, interviews, podcasts, a philosophy about interface design for creative coding, a conversation about the future of computer music, a curriculum of machine listening and machine learning topics, a community of users around the world, and more. The materials included here extend this ecosystem to encompass resources for pedagogues that might be used to teach FluCoMa in various settings. While some of the ideas and resources presented below are FluCoMa-specific, many of them are toolkit-agnostic and we hope that they can be used by anyone looking to teach machine listening and machine learning for creative music making.
+The FluCoMa Toolkit is much more than the actual code objects that use the "Fluid" prefix. FluCoMa is also a collection of learning resources, code examples, commissioned artworks, musicological articles, interviews, podcasts, a philosophy about interface design for creative coding, a conversation about the future of computer music, a curriculum of machine listening and machine learning topics, a community of users around the world, and more. The materials included here extend this ecosystem to encompass resources for pedagogues that might be used to teach FluCoMa in various settings. While some of the ideas and resources presented below are FluCoMa-specific, many of them are toolkit-agnostic and we hope that they can be used by anyone looking to teach machine listening and machine learning for creative music making.
 
-The extent of the FluCoMa ecosystem supports our belief that "providing the tools" is not enough to achieve FluCoMa's mission: _enable techno-fluent musicians to use machine listening and machine learning in their creative practices_. To truly enable these artists we also must provide the knowledge and inspiration, all in a way that is learnable for our main user base: computer musicians. Topics in machine listening, machine learning, computational thinking, and data science are often not included in the training of electronic musicians and therefore our task is to build bridges of understanding from the knowledge of computer music training to a degree of fluency with these topics that enables creative music making. 
+The extent of the FluCoMa ecosystem supports our belief that "providing the tools" is not enough to achieve FluCoMa's mission: _enable techno-fluent musicians to use machine listening and machine learning in their creative practices_. To truly enable these artists we also must provide knowledge and inspiration, all in a way that is learnable for our main user base: computer musicians. Topics in machine listening, machine learning, computational thinking, and data science are often not included in the training of electronic musicians and therefore our task is to build bridges of understanding from the knowledge of computer music training to a degree of fluency with these topics that enables creative music making. 
 
 ## Methodology
 
@@ -24,11 +24,11 @@ Because different learners will desire different degrees of fluency with these t
 
 In some cases, potential paths of pursuing additional resources are more extensive and less linear. This is especially true for the more complex tools in FluCoMa, such as neural networks which have multiple dedicated web resources with varying degrees of technical information, any one of which might come after an initial introduction, but when taken all together encompass the degree of fluency we propose for our learners and users. Learners who are eager to jump to manipulating the many neural network hyper-parameters might jump to [MLP Parameters](https://learn.flucoma.org/learn/mlp-parameters/), while a user who needs a little more time absorbing how a neural network works might opt for [MLP Training](https://learn.flucoma.org/learn/mlp-training/). (Also see [MLPRegressor](https://learn.flucoma.org/reference/mlpregressor/), [MLPClassifier](https://learn.flucoma.org/reference/mlpclassifier/), and [Training-Testing Split](https://learn.flucoma.org/learn/training-testing-split/))
 
-Tiered learning resources allow the learner to pursue knowledge as far as they deem appropriate to feed their creative practice in a given moment. Providing the learner what the _need_ to know _when_ they _need_ to know it enables them to stay focused on a creative idea and not become overwhelmed by what could be a very large body of knowledge with a steep learning curve. This sensitivity to the relationship between creative pursuits and technical knowledge reflects earlier findings of FluCoMa outlined as ["‘Techno-Fluency’ and ‘Divergence’"](http://www.ems-network.org/IMG/pdf_GREEN_TREMBLAY_ROMA_EMS18.pdf). By offering signposts and links to further resources, the user knows where to keep learning if they need it at the moment or if in the future they decide to continue exploring.
+Tiered learning resources allow the learner to pursue knowledge as far as they deem appropriate to feed their creative practice in a given moment. Providing the learner what the _need_ to know _when_ they _need_ to know it enables them to stay focused on a creative idea and not become overwhelmed by what could be a very large body of knowledge with a steep learning curve. This sensitivity to the relationship between creative pursuits and technical knowledge reflects earlier findings of FluCoMa outlined as ["‘Techno-Fluency’ and ‘Divergence’"](http://www.ems-network.org/IMG/pdf_GREEN_TREMBLAY_ROMA_EMS18.pdf). By offering signposts and links to further resources, the user knows where to keep learning if necessary in the moment, or, in the future if they decide to continue exploring.
 
 ## Music-Forward Resources
 
-Because of the specificity of our target learner (a creative coding musician), we have always tried to keep our learning materials and examples musically oriented (as can be seen below). We aim to have the help files and example code make sound in a creative way. When possible we always offer test files and thought experiments that will feel familiar and relevant to our learner such as [instrument samples](https://learn.flucoma.org/reference/noveltyfeature/), [drum hits](https://learn.flucoma.org/reference/bufstats/#a-musical-example), [MIDI notes](https://learn.flucoma.org/reference/bufstats/#order-statistics), [synthesizer settings](https://learn.flucoma.org/learn/regression-neural-network/), [measures of frequency and loudness](https://learn.flucoma.org/learn/why-scale/#plotting-sound-slices-where-1-hz--1-db), etc. We hope this not only explains an object and its interface, but also provides some copy-and-paste code to get started quickly, and generally gets the creative juices flowing while a user is engaging in the learning process.
+Because of the specificity of our target learner (a creative coding musician), we have always tried to keep our learning materials and examples musically oriented (as can be seen below). We aim to have the help files and example code make sound in a creative way. When possible, we offer pedagogical examples and thought experiments that will feel familiar and relevant to our learner such as [instrument samples](https://learn.flucoma.org/reference/noveltyfeature/), [drum hits](https://learn.flucoma.org/reference/bufstats/#a-musical-example), [MIDI notes](https://learn.flucoma.org/reference/bufstats/#order-statistics), [synthesizer settings](https://learn.flucoma.org/learn/regression-neural-network/), [measures of frequency and loudness](https://learn.flucoma.org/learn/why-scale/#plotting-sound-slices-where-1-hz--1-db), etc. We hope this not only explains an object and its interface, but also provides some copy-and-paste code to get started quickly, and generally gets the creative juices flowing while a user is engaging in the learning process.
 
 # Ecosystem of Learning Materials
 
@@ -42,7 +42,7 @@ The example code provided has been created to be as similar as possible across t
 
 ## Web Reference
 
-Every object in FluCoMa (except [CCE-specific objects](#cce-specific-objects)) has a web reference found at [learn.flucoma.org](https://learn.flucoma.org). Because the materials that appear natively in the CCEs link to the web, the web references are considered to be a secondary resource. The goal of the web references is to offer more detailed descriptions of how an algorithm is working "under the hood". This may be useful for satisfying curious learners, or it may build a better intuition of what a particular FluCoMa object might be used for musically. In either case, it should lead to a more informed, and therefore potentially more advanced, use of the object.
+Every object in FluCoMa (except [CCE-specific objects](#cce-specific-objects)) has a web reference found at [learn.flucoma.org](https://learn.flucoma.org). Because the materials that appear natively in the CCEs link to the web, the web references are considered to be a secondary resource. The goal of the web references is to offer more detailed descriptions of how an algorithm is working "under the hood". This may be useful for satisfying curious learners, or it may build a better intuition of what a particular FluCoMa object might be used for musically. In either case, it could lead to a more informed, and therefore potentially more advanced, use of the object.
 
 Many of the web references have interactive explanations that allow a learner to "use" the algorithm in the browser. Not only can these be used by individual learners, we have also found that these are very useful for explanations in the course of teaching. For example, when creating a KDTree for the first time during a code-along class, using the [interactive page](https://learn.flucoma.org/reference/kdtree/) helps give learners a visual sense of what is happening (especially if the KDTree is about to be used with the plotter). The [MFCC reference](https://learn.flucoma.org/reference/mfcc/) has an [interactive explanation](https://learn.flucoma.org/reference/mfcc/explain/) that invites a learner (or a teacher during demonstration) to step through a series of interactions that build intuition about MFCCs.
 
@@ -62,7 +62,7 @@ These articles are not necessarily designed to be consumed in series as part of 
 
 ## Explore Articles
 
-In addition to the web reference and learn articles, the website has many [additional materials](https://learn.flucoma.org/explore/) surrounding artistic uses of the toolkit. These include example artworks, interviews with creative coders, and musicological articles that offer in-depth analysis and example patches of music made with FluCoMa. All of these can be used as context, examples, and inspiration for learners. 
+In addition to the web reference and learn articles, the website has many [additional materials](https://learn.flucoma.org/explore/) surrounding artistic uses of the toolkit. These include example artworks, interviews with creative coders, and musicological articles that offer in-depth analysis and example patches of music made with FluCoMa. All of these can be used as context, examples, and inspiration for learners. These can also be used as entry points, as many learners will find the work produced using FluCoMa or the musical ideas expressed in these articles inspiring and motivating.
 
 ## Discourse
 
@@ -70,13 +70,18 @@ The international community of FluCoMa users primarily communicates through the 
 
 ## Inter-connectivity of Resources
 
-As described above, the FluCoMa learning resources are generally tiered to offer learners the degree of detail needed at a given moment to pursue a creative idea. One way in which our tiered approach is executed is cross referencing the different learning resources. The help files in each creative coding environment (CCE) link to their respective web reference, from which a learner can be linked to many more resources. The web reference, learn articles, and explore articles all cross-link with each other so that a learner reading a web reference might discover an explore article about a musician's use of an object, and from there discover a learn article that might help them pursue the creative use they just learned about. Different learners will need different degrees of technical specificity, inspiration, and modes of engagement at different times. We hope that setting someone "loose" on the website will enable them to find uses of FluCoMa that are meaningful to them as well as the knowledge needed to support them.
+As described above, the FluCoMa learning resources are generally tiered to offer learners the degree of detail needed at a given moment to pursue a creative idea. One way in which our tiered approach is executed is cross referencing the different learning resources. The help files in each creative coding environment (CCE) link to their respective web reference, from which a learner can be pointed to many more resources. The web reference, learn articles, and explore articles all cross-link with each other so that a learner reading a web reference might discover an explore article about a musician's use of an object, and from there discover a learn article that might help them pursue the creative use they just learned about, etc. Different learners will need different degrees of technical specificity, inspiration, and modes of engagement at different times. We hope that setting someone "loose" on the website will enable them to find uses of FluCoMa that are meaningful to them as well as the knowledge needed to support them.
 
-<!-- ### CCE Specific Objects
+### CCE Specific Objects
 
- TODO (Ted)
- 
- -->
+Pedagogues should be aware that there are a few objects in FluCoMa that are CCE specific in name and/or implementation because of CCE differences. These objects diverge from FluCoMa's philosophy of cross-environment parity in order to ensure workflows in the toolkit are idiomatic and _Fluid_ for beginner and expert users.
+
+| **Max**        | **Pure Data** | **SuperCollider** |                                                                 |
+| :---:          | :---:         | :---:             | :---                                                            |
+| fluid.list2buf | <!-- TODO --> | FluidKrToBuf      | _writing control information into a buffer_                     |
+| fluid.buf2list |               | FluidBufToKr      | _reading control information out of a buffer_                   |
+| fluid.plotter  |               | FluidPlotter      | _similar functionality and syntax but divergent implementation_ |
+| fluid.waveform |               | FluidWaveform     | _similar functionality and syntax but divergent implementation_ |
 
 # "101" Tutorials
 
@@ -127,6 +132,7 @@ Not only does this activity quickly provide learners with a machine learning ins
 2. Buffer interfacing
     - fluid.buf2list~ and fluid.list2buf~ for Max
     - FluidBufToKr and FluidKrToBuf for SuperCollider
+    <!-- TODO - xxxxxxx for Pure Data -->
 3. Using artist-created DataSets
 4. Aesthetic evaluation of results
 5. Iterative trial-and-error workflows with machine learning algorithms
@@ -463,6 +469,20 @@ TODO (I'm thinking that maybe James will want to do this one because he's just b
 
 During longer workshops, we were able to demonstrate and code-along more advanced topics. All of these have occurred _after_ doing all of the 101 activities.
 
+## UMAP 1D
+
+The creative example often shown as part of the [2D Sound Browser](#2d-sound-browser) activity sparked questions about recreating that result, so we made some simplified demo code to demonstrate "UMAP 1D". After completing the 2D Sound Browser, this example is not particularly more advanced, but offers a fast and compelling way for learners to organize their own sounds through time. It also shows a less common use of one of the tools (using UMAP to reduce to 1 dimension, rather than 2), which may spark more creative and divergent thinking with the toolkit.
+
+1. Iterate over the length of a buffer analyzing each 100 milliseconds as a sound slice using BufMFCC, then use the average coefficients of that 100 milliseconds to represent each slice, adding them all to a DataSet. In this example, the sample position of where the 100 milliseconds begins is used for the identifier, so for later playback, that information can be used directly. (`startCoeff` is set to 1, but could be experimented with.)
+2. Choose whether or not to use a scaler (and if so which).
+3. Perform UMAP indicating the desired number of dimensions is 1.
+4. Dump the DataSet written by UMAP and sort according to the 1 dimensional position determined by UMAP. The identifier (starting sample position) needs to remain associated with the UMAP position through the sorting so that the, now ordered, sample positions can be used to playback the 100 millisecond sections of the buffer.
+5. Iterate over the 100 millisecond sections of the buffer, playing each one. In our code this is done with a sine shaped window and an overlap of 4 (so the result will be 1/4 the duration of the original).
+
+**Completed Code Example**
+* [UMAP 1D example for SuperCollider]()
+<!-- TODO * [UMAP 1D example for Max]() -->
+
 ## MLPRegressor with Audio Descriptors as Input
 
 A "201" activity that we've done using MLPRegressor involves using real time audio analyses as input to the neural network. The completed code can be found at the links below. Similar to other activities, we have used a [slides presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/mlp-with-descriptors-input.pdf) to explain in the abstract what we will be coding before creating the code together with the learners as a code along. This activity offers a good opportunity to extend the learners' knowledge of MLPs in a few ways:
@@ -483,7 +503,7 @@ This idea is based on an insight from a [learner](https://github.com/tmhglnd) in
 This lead to an idea to try to train an [autoencoder](https://towardsdatascience.com/auto-encoder-what-is-it-and-what-is-it-used-for-part-1-3e5c6f017726) to create a latent space of a set of wavetables. Navigating through the latent space would morph the wavetable shape in a musically and navigable way. As you can see in the steps below, this introduces many more concepts that are advanced but build on knowledge gained in previous tutorials.
 
 1. The "wavetables" used in the example are excerpts 2048 samples long taken from the audio file of trombone tones that is included in the FluCoMa toolkit ("Olencki-TenTromboneLongTones-M.wav"). 
-2. Because each one of these is a data point with 2048 dimensions [PCA](https://learn.flucoma.org/reference/pca/) is first used to reduce the number of dimensions to around 150 (something like around 95% of the variance can be maintained). 
+2. Because each one of these is a data point with 2048 dimensions, [PCA](https://learn.flucoma.org/reference/pca/) is first used to reduce the number of dimensions to around 150 (something like around 95% of the variance can be maintained). 
 3. The autoencoder is then trained with this DataSet as the input and output with a latent space of 2 (`hiddenLayers` is something like [80,40,2,40,80]).
 4. Then when making predictions, the `tapIn` and `tapOut` arguments need to be set and used accordingly, as well as the `inverseTransformPoint` method for PCA.
 
@@ -491,10 +511,6 @@ This lead to an idea to try to train an [autoencoder](https://towardsdatascience
 
 * [Wavetable Autoencoder example for SuperCollider]()
 * [Wavetable Autoencoder example for Max]()
-
-## UMAP 1D
-
-One more demonstration that 
 
 # Multi-Day Workshops
 
@@ -680,7 +696,9 @@ This course schedule is designed for a 14 week semester with two 90-minute class
 
 # Relevance to Contemporary Society
 
-We believe that the enhanced understanding of data, data science, and machine learning that learning FluCoMa provides should be used as a lens to consider how these tools often uphold inequalities, injustices, and hegemonies in our societies. Below is a list of books (in no particular order) that provide many examples of contemporary technologies negative impacting marginalized communities. Many additionally offer directions for how to approach and use data science ethically. We recommend selecting a book or readings from these books to augment learning. Each of these is written for different audiences, so selecting which is best is at the instructor/learner's discretion.
+We believe that learning about data, data science, and machine learning through FluCoMa can be be used as a lens to consider how these tools operate in contemporary society, in particular to uphold inequalities, injustices, and hegemonies. By gaining fluency and understanding with these algorithms, one can come to understand what these algorithms are good for, what they are not good for, how they go wrong, and the relationship between data, algorithms, and the humans that use them. The skills and knowledge, both explicit and tacit, that working with FluCoMa and foster can be used to reflect on many of the AI events and concerns that are constantly appearing in the news. Pedagogues might draw on these events to use as discussion topics where a classroom of learners can collectively reflect on contemporary topics using the experience and understand built through FluCoMa.
+
+Below is a list of books (in no particular order) that provide many examples of contemporary technologies negative impacting marginalized communities. Many additionally offer directions for how to approach and use data science ethically. We recommend selecting a book or readings from these books to augment learning. Each of these is written for different audiences, so selecting which is best is at the instructor/learner's discretion.
 
 * _Data Feminism_ by Catherine D'Ignazio and Lauren F. Klein. 
 * _Weapons of Math Destruction_ by Cathy O'Neil
