@@ -76,17 +76,17 @@ As described above, the FluCoMa learning resources are generally tiered to offer
 
 Pedagogues should be aware that there are a few objects in FluCoMa that are CCE specific in name and/or implementation because of CCE differences. These objects diverge from FluCoMa's philosophy of cross-environment parity in order to ensure workflows in the toolkit are idiomatic and _Fluid_ for beginner and expert users.
 
-+----------------+---------------+-------------------+-----------------------------------------------------------------+
-| **Max**        | **Pure Data** | **SuperCollider** |                                                                 |
-+================+===============+===================+=================================================================+
-| fluid.list2buf | <!-- TODO --> | FluidKrToBuf      | _writing control information into a buffer_                     |
-+----------------+---------------+-------------------+-----------------------------------------------------------------+
-| fluid.buf2list |               | FluidBufToKr      | _reading control information out of a buffer_                   |
-+----------------+---------------+-------------------+-----------------------------------------------------------------+
-| fluid.plotter  |               | FluidPlotter      | _similar functionality and syntax but divergent implementation_ |
-+----------------+---------------+-------------------+-----------------------------------------------------------------+
-| fluid.waveform |               | FluidWaveform     | _similar functionality and syntax but divergent implementation_ |
-+----------------+---------------+-------------------+-----------------------------------------------------------------+
++----------------+----------------+-------------------+-----------------------------------------------------------------+
+| **Max**        | **Pure Data**  | **SuperCollider** |                                                                 |
++================+================+===================+=================================================================+
+| fluid.list2buf |    (native)    | FluidKrToBuf      | _writing control information into a buffer_                     |
++----------------+----------------+-------------------+-----------------------------------------------------------------+
+| fluid.buf2list |    (native)    | FluidBufToKr      | _reading control information out of a buffer_                   |
++----------------+----------------+-------------------+-----------------------------------------------------------------+
+| fluid.plotter  | fluid.plotter  | FluidPlotter      | _similar functionality and syntax but divergent implementation_ |
++----------------+----------------+-------------------+-----------------------------------------------------------------+
+| fluid.waveform | fluid.waveform | FluidWaveform     | _similar functionality and syntax but divergent implementation_ |
++----------------+----------------+-------------------+-----------------------------------------------------------------+
 
 # "101" Tutorials
 
@@ -137,7 +137,7 @@ Not only does this activity quickly provide learners with a machine learning ins
 2. Buffer interfacing
     - fluid.buf2list~ and fluid.list2buf~ for Max
     - FluidBufToKr and FluidKrToBuf for SuperCollider
-    <!-- TODO - xxxxxxx for Pure Data -->
+    - cloning fluid.multiarray as 'multichannel buffers' for Pure Data
 3. Using artist-created DataSets
 4. Aesthetic evaluation of results
 5. Iterative trial-and-error workflows with machine learning algorithms
