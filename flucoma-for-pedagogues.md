@@ -1,6 +1,7 @@
 ---
 title: FluCoMa for Pedagogues
 subtitle: by Ted Moore, James Bradbury, Pierre Alexandre Trembly, and Owen Green
+date: August 15, 2022
 linkcolor: blue
 urlcolor: blue
 toccolor: blue
