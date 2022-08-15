@@ -1,5 +1,6 @@
 ---
-documentclass: scrartcl
+title: FluCoMa for Pedagogues
+subtitle: by Ted Moore, James Bradbury, Pierre Alexandre Trembly, and Owen Green
 linkcolor: blue
 urlcolor: blue
 toccolor: blue
