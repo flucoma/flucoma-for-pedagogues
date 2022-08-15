@@ -99,7 +99,7 @@ After teaching numerous workshops we have identified a few class plans that work
 * [in Max](https://www.youtube.com/watch?v=XfNZzQPdPG0)
 * [in SuperCollider](https://www.youtube.com/watch?v=mxmMBvi3Cb0)
 
-Often the first activity we engage with students is to build a neural network that performs regression to control a synthesizer. This gets learners making sound quickly and uses part of the toolkit that is often quite exciting for newcomers to machine learning to engage with (neural networks). This activity takes any where from 40-90 minutes depending on the class of learners. Here is a brief outline of the lesson plan:
+Often the first activity we engage with learners is to build a neural network that performs regression to control a synthesizer. This gets learners making sound quickly and uses part of the toolkit that is often quite exciting for newcomers to machine learning to engage with (neural networks). This activity takes any where from 40-90 minutes depending on the class of learners. Here is a brief outline of the lesson plan:
 
 1. Share a [real world example](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-example.pdf) (including watching a [performance excerpt](https://vimeo.com/565771489)) of why someone might want to use a system like this.
 2. Using a [slides presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-process.pdf) step through how we will be collecting training data and training the neural network, including some intuition about how the training process works.
@@ -213,7 +213,7 @@ As with the neural network "101" tutorials, this one also often begins with an e
 10. Fit a KDTree to the analyses DataSet and use it to find the point nearest the mouse, `highlight` that point, and play back that slice.
     - When clicking and dragging on the plotter, the learner will notice that the highlighted point doesn't seem to track with the mouse as expected. This is because the visual perception of nearness in the Plotter doesn't correspond to the greatly mismatched scales in the two dimensions. This is another good opportunity to raise awareness about "know your data", particularly through the [Why Scale? Distance as Similarity](https://learn.flucoma.org/learn/why-scale/) web page. The content on this page was first expressed as [slide presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/scaling.pdf), which could be used instead.
 11. Normalize the DataSet so it it can be displayed in Plotter's default normalized space and the KDTree lookup of the mouse position tracks better.
-    - This is a potential stopping point where users can, again, include their own sounds and tweak parameters. Students could organize into small groups and give short improvised performances using idiosyncratic sounds with this performance instrument.
+    - This is a potential stopping point where users can, again, include their own sounds and tweak parameters. Learners could organize into small groups and give short improvised performances using idiosyncratic sounds with this performance instrument.
 
 **MFCC Analysis and UMAP Dimensionality Reduction**
 
@@ -434,7 +434,7 @@ BufStats has many more features that are somewhat less explored and probably not
 
 **"Know Your Data"**
 
-As with all data science and machine learning, understanding what data represents, what it can tell you (and more importantly what it _can't_), and what transformations _do_ to data is essential. It is continuously important for FluCoMa learners to reflect on their data. There are a few visualization tools that are very important for users to get comfortable with including the Waveform object (`fluid.waveform~` in Max and `FluidWaveform` in SuperCollider). While teaching, these tools should be used whenever possible to help students understand the data processing that is happening and get them in the habit of visually checking on their data regularly to build understanding of what they're data represents.
+As with all data science and machine learning, understanding what data represents, what it can tell you (and more importantly what it _can't_), and what transformations _do_ to data is essential. It is continuously important for FluCoMa learners to reflect on their data. There are a few visualization tools that are very important for users to get comfortable with including the Waveform object (`fluid.waveform~` in Max and `FluidWaveform` in SuperCollider). While teaching, these tools should be used whenever possible to help learners understand the data processing that is happening and get them in the habit of visually checking on their data regularly to build understanding of what they're data represents.
 
 Many machine learning algorithms make various assumptions about data (similar to now humans make assumptions about sound and machine listening). One of these assumptions is that the dimensions in a DataSet are identically distributed, often Gaussian distributed. It can be important to know how one's data is distributed and relatively easy to check on using a histogram. Our [Distribution and Histograms](https://learn.flucoma.org/learn/distribution/) page gives some examples of different kinds of distributions, what they mean, and some example code to check on a distribution using a histogram.
 
@@ -518,7 +518,71 @@ This lead to the idea to train an [autoencoder](https://towardsdatascience.com/a
 * [Wavetable Autoencoder example for SuperCollider](https://f003.backblazeb2.com/file/learnassets/examples/autoencoder.scd)
 * [Wavetable Autoencoder example for Max](https://f003.backblazeb2.com/file/learnassets/examples/autoencoder.maxpat)
 
-# Multi-Day Workshops
+# Workshops Formats
+
+Over the course of about one year, we conducted numerous workshops in various formats. For each of these workshops the only tech required is a projector and stereo audio. Some of these workshops were conducted online (because of Covid-19). Below are some reflections on the formats conducted, should they serve useful for future FluCoMa workshop settings.
+
+We did many of these class period sessions, the quantity of which was very helpful for us to get feedback on the lesson plans we had designed. Sometimes we did multiple of these sessions in one day, allowing for quick iteration on our lesson plans. The questions asked by learners directly impacted how we taught topics in the future, as well as led to many Learn Articles, examples, and clarifications in many of the learning resources.
+
+**One Class Period**
+
+Some of the sessions we offered were just a single class period (usually about 90 minutes) embedded in a semester long curriculum on music technology. For these sessions we presented an [introductory slides presentation](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/intro-to-flucoma.pdf) and then continued with one neural network activity, usually either the [MLPRegressor session](#mlpregressor), just it's [MLPClassifier](#classifier-extension) version, or a combination of both. These seemed to work well, the activities ended in learners successfully completing the code and having a working version. We had some follow up from learners after who wanted to dig in more. 
+
+**One Day (2-6 Hours)**
+
+Our one day workshops were similar to the _one class period_ workshops above, but allowed for one additional activity to be offered. This was often adding the [2D Sound Browser](#2d-sound-browser) activity after the neural network activity.
+
+**Two Days**
+
+One common setting we had was a two day workshop where one day would be a presentation at an academic seminar and following that would be a classroom presentation or extra curricular workshop. The following workshop followed our _one day_ format above, but we were able to skip any introductory material and therefore a little more content. This was either in the form of taking a little more time with the activities (showing some more possibilities with the code, diving deeper into some concepts, etc.), or adding an additional activity, such as the [Intro to NMF](#introduction-to-nmf), or demonstrating some of the other decomposition objects ([HPSS](https://learn.flucoma.org/reference/hpss/), [Sines](https://learn.flucoma.org/reference/sines/), and [Transients](https://learn.flucoma.org/reference/transients/)). Another popular object to add to these workshops when we had time was [AudioTransport](https://learn.flucoma.org/reference/audiotransport/).
+
+**Five Days**
+
+On three occasions we offered five day workshops (about six hours each day) that allowed for a much deeper dive into FluCoMa. Because we had so much time, we tended to allow these sessions to expand in length and content as learners' questions offered more 
+directions to explore. This was very beneficial to use to see what kinds of questions, deep dives, and idiosyncratic directions were interesting and challenging to learners.
+
+It also allowed us to allocate more time for learners to play around with code after an activity, modifying it to their own artistic uses and inviting us to help them understand it further. We also found a constant tension between some learners wanting more individual work time and some learners wanting to use all the time absorbing more content (saving the individual work time for the evenings or after the workshop). We also found that after a few days (or sometimes just one day) many learners were overwhelmed with the breadth and depth of the content. We didn't necessarily have a solution to this, however, if enough of the learners were feeling overwhelmed we often took that moment to have a pause in content and provide some individual work time.
+
+**An example outline of a 5 day workshop:**
+
+* Day 1
+  - AM
+    - [Intro](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/intro-to-flucoma.pdf)
+    - [MLPClassifier](#classifier-extension)
+    - [What are MFCCs?](https://learn.flucoma.org/reference/mfcc/)
+  - PM
+    - [MLPRegressor](#mlpregressor)
+    - Individual work time
+* Day 2
+  - AM
+    - [2D Sound Browser](#2d-sound-browser)
+  - PM
+    - 2D Sound Browser (continued)
+    - [Hinges](https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/hinges.key)
+    - [UMAP](https://learn.flucoma.org/reference/umap/)
+* Day 3
+  - AM
+    - [MLPRegressor with Audio Descriptors](#mlpregressor-with-audio-descriptors-as-input)
+    - [Advanced MLP Parameters](#advanced-neural-networks)
+  - PM
+    - Decomposition Tools ([HPSS](https://learn.flucoma.org/reference/hpss/), [Sines](https://learn.flucoma.org/reference/sines/), and [Transients](https://learn.flucoma.org/reference/transients/)) 
+    - [Intro to NMF](#introduction-to-nmf)
+    - Individual work time
+* Day 4
+  - AM
+    - Project brainstorming with facilitators
+    - Individual work time  
+  - PM: Advanced Topics
+    - [Grid](https://learn.flucoma.org/reference/grid/)
+    - [KMeans](https://learn.flucoma.org/reference/kmeans/)
+    - Individual work time
+* Day 5
+  - AM: Advanced Topics
+    - [UMAP 1D](#umap-1d)
+    - [Autoencoders](#wavetable-autoencoder)
+    - Individual work time
+  - PM
+    - Participants share some of their work with the group, either code that is making sound and working or plans for what their working on.
 
 # Example Semester-Long Syllabus
 
@@ -712,5 +776,3 @@ Below is a list of books (in no particular order) that provide many examples of 
 * _Revolutionary Mathematics_ by Justin Joque
 * _Blockchain Chicken Farm: And Other Stories of Tech in China's Countryside_ by Xiaowei Wang
 * _The Alignment Problem_ by Brian Christian
-
-# Links to Pedagogical Materials
