@@ -375,7 +375,7 @@ It also may be of interest for learners to hear the explanation of _why_ buffers
 
 ## Advanced Neural Networks
 
-Learners often follow up the [neural network 101 activity](#mlpregressor) with questions about the hyper-parameters (which FluCoMa calls parameters or arguments) of the MLP. In shorter workshops (two days or fewer) we have felt that it's not enough time to delve into this with enough depth to make it understood and _useable_ for the participants, so we've directed them towards our [web resources](https://learn.flucoma.org/learn/mlp-parameters/) on the topic. In longer workshops (three days or more) we have take time later in the week (day three or four) after the "101" activity to unpack many more ideas and strategies about the MLP objects.
+Learners often follow up the [neural network 101 activity](#mlpregressor) with questions about the hyper-parameters (which FluCoMa calls parameters or arguments) of the MLP. In shorter workshops (two days or fewer) we have felt that it's not enough time to delve into this with enough depth to make it understood and _useable_ for the participants, so we've directed them towards our [web resources](https://learn.flucoma.org/learn/mlp-parameters/) on the topic. In longer workshops (three days or more) we have taken time later in the week (day three or four) after the "101" activity to unpack many more ideas and strategies about the MLP objects.
 
 **Web Resources**
 
