@@ -505,11 +505,13 @@ Another de-myth-ification that has occured is when learners will assume that the
 
 Framing validation with these benefits in mind can help encourage learners to put in the extra work that it takes.
 
+<!--
 ## Dealing with Time
 
 _Coming Soon_
 
-<!-- (I'm thinking that maybe James will want to do this one because he's just been writing some learn articles about it. Or perhaps PA since he's done a lot of thinking about it regarding LPT, etc.) -->
+(I'm thinking that maybe James will want to do this one because he's just been writing some learn articles about it. Or perhaps PA since he's done a lot of thinking about it regarding LPT, etc.) 
+-->
 
 # Advanced Activities & Examples
 
