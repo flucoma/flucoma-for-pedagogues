@@ -1,1 +1,5 @@
-pandoc -N --include-in-header latexheader.tex --variable version=2.0 --pdf-engine=xelatex --toc --variable monofont="Times" --variable fontsize=12pt -i flucoma-for-pedagogues.md -o flucoma-for-pedagogues.pdf   
+pdflatex flucoma-for-pedagogues.tex
+bibtex flucoma-for-pedagogues
+pdflatex flucoma-for-pedagogues.tex
+pdflatex flucoma-for-pedagogues.tex
+pandoc --bibliography bibliography.bib -s flucoma-for-pedagogues.tex -o flucoma-for-pedagogues.rtf
