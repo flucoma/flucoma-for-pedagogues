@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  11 FEB 2024 19:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  16 MAR 2024 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -243,25 +243,25 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./flucoma-for-pedagogues.aux)
 \openout1 = `flucoma-for-pedagogues.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-Package hyperref Info: Link coloring OFF on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+Package hyperref Info: Link coloring OFF on input line 16.
  (./flucoma-for-pedagogues.out)
 (./flucoma-for-pedagogues.out)
 \@outlinefile=\write3
@@ -290,6 +290,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 19.
+
+Overfull \hbox (47.20721pt too wide) in paragraph at lines 19--19
+ [][] 
+ []
+
+[1
+
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./flucoma-for-pedagogues.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
@@ -299,75 +313,72 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `flucoma-for-pedagogues.toc'.
 
- [1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- [4]
-Overfull \hbox (3.58401pt too wide) in paragraph at lines 205--210
+ [2] [3] [4] [5]
+Overfull \hbox (3.58401pt too wide) in paragraph at lines 213--218
 \OT1/cmr/m/n/10 FluCoMa's learn-ing web-site ([]learn.flucoma.org[]) also con-t
 ains many ar-ti-cles about
  []
 
 
-Overfull \hbox (1.83405pt too wide) in paragraph at lines 258--273
+Overfull \hbox (1.83405pt too wide) in paragraph at lines 266--281
 \OT1/cmr/m/n/10 The in-ter-na-tional com-mu-nity of Flu-CoMa users pri-mar-ily 
 com-mu-ni-cates through
  []
 
-[5{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+[6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }]
-<./figures/interconnected-resources.png, id=256, 1221.56375pt x 337.26pt>
+<./figures/interconnected-resources.png, id=261, 1221.56375pt x 337.26pt>
 File: ./figures/interconnected-resources.png Graphic file (type png)
 <use ./figures/interconnected-resources.png>
 Package pdftex.def Info: ./figures/interconnected-resources.png  used on input 
-line 295.
+line 303.
 (pdftex.def)             Requested size: 310.4979pt x 85.72484pt.
- [6 <./figures/interconnected-resources.png>] [7] [8] [9]
-<./figures/bufstats-chart.png, id=322, 1370.11874pt x 628.3475pt>
+ [7 <./figures/interconnected-resources.png>] [8] [9] [10]
+<./figures/bufstats-chart.png, id=327, 1370.11874pt x 628.3475pt>
 File: ./figures/bufstats-chart.png Graphic file (type png)
 <use ./figures/bufstats-chart.png>
-Package pdftex.def Info: ./figures/bufstats-chart.png  used on input line 573.
+Package pdftex.def Info: ./figures/bufstats-chart.png  used on input line 581.
 (pdftex.def)             Requested size: 310.4979pt x 142.39798pt.
- [10 <./figures/bufstats-chart.png>] [11] [12] [13]
-Overfull \hbox (132.74583pt too wide) in paragraph at lines 821--821
+ [11 <./figures/bufstats-chart.png>] [12] [13] [14]
+Overfull \hbox (132.74583pt too wide) in paragraph at lines 829--829
 []  \OT1/cmtt/m/n/10 FluidBufSpectralShape.processBlocking(s,~src,start,num,fea
 tures:spec,select:[\centroid]);[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 821--821
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 829--829
 []  \OT1/cmtt/m/n/10 FluidBufStats.processBlocking(s,spec,stats:stats,select:[\
 mean]);[] 
  []
 
 
-Overfull \hbox (80.24629pt too wide) in paragraph at lines 821--821
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 829--829
 []  \OT1/cmtt/m/n/10 // copy the mean spectral centroid to the appropriate inde
 x (destStartFrame) of[] 
  []
 
 
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 821--821
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 829--829
 []  \OT1/cmtt/m/n/10 FluidBufCompose.processBlocking(s,stats,destination:meance
 ntroids,destStartFrame:i);[] 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-826.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 826.
+834.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 834.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 826.
+(Font)              for symbol `textbraceleft' on input line 834.
 
-[14]
-<./figures/pitch-analysis.jpg, id=374, 1628.61972pt x 407.15492pt>
+[15]
+<./figures/pitch-analysis.jpg, id=379, 1628.61972pt x 407.15492pt>
 File: ./figures/pitch-analysis.jpg Graphic file (type jpg)
 <use ./figures/pitch-analysis.jpg>
-Package pdftex.def Info: ./figures/pitch-analysis.jpg  used on input line 871.
+Package pdftex.def Info: ./figures/pitch-analysis.jpg  used on input line 879.
 (pdftex.def)             Requested size: 310.4979pt x 77.62117pt.
- [15 <./figures/pitch-analysis.jpg>] [16] [17] [18]
-(./flucoma-for-pedagogues.bbl [19]) [20] (./flucoma-for-pedagogues.aux)
+ [16 <./figures/pitch-analysis.jpg>] [17] [18] [19]
+(./flucoma-for-pedagogues.bbl [20]) [21] (./flucoma-for-pedagogues.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -376,24 +387,25 @@ Package rerunfilecheck Info: File `flucoma-for-pedagogues.out' has not changed.
 (rerunfilecheck)             Checksum: C121941442D0669D15A9C63072458C41;6551.
  ) 
 Here is how much of TeX's memory you used:
- 8539 strings out of 476025
- 136734 string characters out of 5790018
- 1871388 words of memory out of 5000000
- 28816 multiletter control sequences out of 15000+600000
- 514654 words of font info for 40 fonts, out of 8000000 for 9000
+ 8561 strings out of 476025
+ 136970 string characters out of 5790018
+ 1864388 words of memory out of 5000000
+ 28829 multiletter control sequences out of 15000+600000
+ 517698 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,76p,403b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on flucoma-for-pedagogues.pdf (20 pages, 535168 bytes).
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on flucoma-for-pedagogues.pdf (21 pages, 549981 bytes).
 PDF statistics:
- 483 PDF objects out of 1000 (max. 8388607)
- 437 compressed objects within 5 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 492 PDF objects out of 1000 (max. 8388607)
+ 443 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
  312 words of extra memory for PDF output out of 10000 (max. 10000000)
 
