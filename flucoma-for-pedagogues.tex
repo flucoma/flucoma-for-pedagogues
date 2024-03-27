@@ -5,6 +5,7 @@
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{float}
 
 \title{\textbf{Making Machine Learning Musical: Reflections on a Year of Teaching FluCoMa}}
 \author{Ted Moore, James Bradbury, Pierre Alexandre Trembly, and Owen Green}
@@ -54,7 +55,7 @@ our main user base: computer musicians. Topics in machine listening,
 machine learning, computational thinking, and data science are often not
 included in the training of electronic musicians and therefore a primary
 objective of FluCoMa is to build bridges of understanding from the
-knowledge that comes from computer music training to a degree of fluency
+knowledge that comes from computer music training towards a degree of fluency
 with these topics that enables creative music making.
 
 \section{Design Goals}
@@ -165,7 +166,7 @@ with other FluCoMa objects. This information will hopefully provide a
 learner some motivation for exploring an object and the amount of
 knowledge necessary to do so. Each resource in the CCE contains a link
 to the corresponding \hyperref[web-reference]{web-reference} if the
-learner wishes to pursue a deeper understanding of the object.
+learner wishes to pursue a deeper understanding of the tool.
 
 The example code provided has been created to be as similar as possible
 across the three CCEs while keeping idiomatic to each environment. One
@@ -185,10 +186,7 @@ reference found at \href{https://learn.flucoma.org}{learn.flucoma.org}.
 Because the reference materials that appear natively in the CCEs link to the web,
 the web references are considered to be a secondary resource. The goal
 of the web references is to offer more detailed descriptions of how an
-algorithm is working ``under the hood''. This may be useful for
-satisfying curious learners and/or building a better intuition for
-musical uses of an object. In either case, it could lead to a more
-informed, and therefore potentially more advanced, use of the object.
+algorithm is working ``under the hood.''
 
 Many of the web references have interactive explanations that allow a
 learner to ``use'' the algorithm in the browser. Not only can these be
@@ -207,6 +205,13 @@ MFCCs.
 We imagine the web references to be used as solo-learning resources, in
 parallel with class assignments, as teaching demonstrations, and/or as
 useful reminders.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/mfcc-interactive-demonstration.png}
+\caption{Screenshot from MFCC interactive demonstration.}
+\label{fig:mfcc-interactive-demonstration}
+\end{figure}
 
 \subsection{Learn Articles}\label{learn-articles}
 
@@ -298,7 +303,7 @@ times. We hope that setting someone ``loose'' on the website will enable
 them to find uses of FluCoMa that are meaningful to them as well as the
 knowledge needed to support them.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/interconnected-resources.png}
 \caption{Screenshot from "Neural Network Parameters" page showing links to other related pages as colored boxes.}
@@ -338,7 +343,7 @@ the class of learners. Here is a brief outline of the lesson plan:
   Share a
   \href{https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-example.pdf}{real
   world example} (including watching a
-  \href{https://vimeo.com/565771489}{performance excerpt}) of why
+  \href{https://youtu.be/qTHJaryNgBo}{performance excerpt}) of why
   someone might want to use a system like this.
 \item
   Using a
@@ -554,36 +559,27 @@ way is often when we allocate a buffer to hold a data point. If the data
 point has just 2 dimensions (such as with the
 \hyperref[example-lesson-plan]{MLPRegressor activity}), we will allocate the
 buffer with only 2 frames (in Max: \texttt{@samps\ 2}; in SuperCollider:
-\texttt{Buffer.alloc(s,2)}). At this point we try to offer something
-like the following:
-
-\begin{quote}
-\emph{``The way we most often use buffers in {[}this CCE{]} is to hold
-audio samples which very commonly have 44,100 samples per second, so our
-buffers could have many tens or hundreds of thousands of values in them.
-Because I know this buffer is only going to need to hold two values,
-I'll allocate it to have just two samples.''}
-\end{quote}
+\texttt{Buffer.alloc(s,2)}), at which point we reflect on the concept of a buffer being a container of values that often holds samples we play back at a rate of 44,100 of them per second. However, these values could actually represent anything and playing them at a specific rate through a digital-to-analog converter is just way of using values.
 
 \subsubsection{Holding Analyses}
 
 Once we start writing audio analyses into buffers (with the
-\texttt{feature} argument), learners often have a hard time keep track
+\texttt{feature} argument), learners often have a hard time keeping track
 of the structure of the buffers (What do the channels represent? How
 many are there? What do the frames represent? How many are there?). We
 found that offering CCE-agnostic
 \href{https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/buffer-charts.pdf}{charts}
 of the ``shape'' of the buffer is very helpful for giving learners a
-mental model to hold in their mind.
+mental model.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/bufstats-chart.png}
 \caption{Chart demonstrating what the channels and frames of a particular buffer represent.}
 \label{fig:bufstats-chart}
 \end{figure}
 
-It's also useful to point out that for buffers that hold audio analyses,
+It's also useful to point out that for buffers which hold audio analyses,
 the frames (or what we sometimes refer to as the ``\texttt{x} axis'' in
 reference to the charts above) is still a time series, just like audio
 is, but now it's not a time series of voltages (as in audio), it's a
@@ -600,12 +596,12 @@ processors (such as the audio descriptor analyzers) set the \emph{sample
 rate} of these buffers appropriately (Pure Data arrays don't hold
 metadata). If the values in that buffer are read back at that rate, they
 will correspond in time (be synchronized with) to the audio on which the
-analysis was based. Point this out to learners helps them remember an conceptualize the relationship between the source audio being analyzed, the STFT process, and the resulting time series of descriptor values.
+analysis was based. Pointing this out to learners helps them remember and conceptualize the relationship between the source audio being analyzed, the STFT process, and the resulting time series of descriptor values.
 
 \subsubsection{Manipulating \& Copying Data}
 
-Often it is necessary to manipulate the data in a buffer, such as pick
-out values from certain channels and/or frames and copy them to another
+Often it is necessary to manipulate the data in a buffer, such as picking
+out values from certain channels and/or frames and copying them to another
 buffer. In order to provide some ``test and check'' interactivity to build
 fluency with these operations, the appropriate web references have
 interactive GUIs for practicing:
@@ -623,6 +619,13 @@ interactive GUIs for practicing:
 \item
   \href{https://learn.flucoma.org/reference/bufscale/}{BufScale}
 \end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/bufflatten.png}
+\caption{Interactive web GUI for ``testing and checking'' the transformations of BufFlatten.}
+\label{fig:buf-flatten}
+\end{figure}
 
 \subsubsection{Why Buffers}
 
@@ -646,7 +649,7 @@ way for a few reasons:
     Faster processing by interfacing directly with the C++ code.
   \item
     Simpler implementation of functions across all three CCEs because
-    all three environments share the same C++ code base for all of the
+    all three environments share the same FluCoMa core C++ code for
     audio analysis, buffer processing, and algorithms.
   \end{itemize}
 \item
@@ -654,7 +657,7 @@ way for a few reasons:
   used in other parts of the CCE. For example because the MLPRegressor
   writes predictions into a buffer, it's possible to be predicting
   wavetable shapes directly into a
-  buffer that is simultaneously being read out of, all on the scsynth server.
+  buffer that is simultaneously being read out of, all on the \texttt{scsynth} server.
 \end{itemize}
 
 \subsection{Stateful Objects}\label{stateful-objects}
@@ -684,7 +687,7 @@ and where in data processing one would call upon that state.
 As with many audio tasks, the STFT is central to much of how a learner
 interacts with FluComa. Many times learners can do exciting things,
 learn a lot about the toolkit, and make great music without reflecting
-on the FFT processes happening ``under the hood.'' We have found
+on the fourier transforms happening ``under the hood.'' We have found
 however, that for many of the algorithms in FluCoMa (such as
 \href{https://learn.flucoma.org/reference/audiotransport/}{AudioTransport},
 \href{https://learn.flucoma.org/reference/sines/}{Sines}, and many
@@ -696,9 +699,8 @@ these parameters have.
 There exists a
 \href{https://learn.flucoma.org/learn/fourier-transform/#related-resources}{wealth
 of resources} on the internet for learners to build fluency with the
-Fourier Transform, so we didn't feel the need to recreate many of these
-learning tools. We have however, curated a small set of musician-oriented ideas that will be important for FluCoMa learners to consider as they are approaching the
-toolkit, which exist on these two pages:
+Fourier Transform, so we didn't feel the need to recreate these
+learning tools. We have however, curated a small set of musician-oriented ideas that go just deep enough for learners to gain access to more musical expression from these FluCoMa tools.
 
 \begin{itemize}
 \tightlist
@@ -746,7 +748,7 @@ unpack many more ideas and strategies about the MLP objects.
   mean, and what one might do to improve a model.
 \end{itemize}
 
-\subsubsection{Building Intuition about How Neural Networks Learn}
+\subsubsection{Teaching Materials}
 
 The sequence of explanation that we've used for both the
 \href{https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/regressor-process.pdf}{MLPRegressor}
@@ -760,16 +762,12 @@ and
 \href{https://learn.flucoma.org/learn/classification-neural-network/}{MLPClassifier}
 tutorial videos.
 
-\subsubsection{MLP Parameters}
-
 As stated above, when we have had time in workshops, we've allocated
 time to
 \href{https://f003.backblazeb2.com/file/learnassets/examples/teaching-material/mlp-parameters.pdf}{explain
 the parameters in more detail}. A very useful site for explaining and
 playing with the \texttt{momentum} parameter can be found on
 \href{https://distill.pub/2017/momentum/}{distill}.
-
-\subsubsection{Visualizing a MLP}
 
 One might notice in many of the resources above that there are
 node-and-edge graphs of MLP architectures. We found that these are very
@@ -781,6 +779,13 @@ important to have a visual representation of the architecture that is
 \emph{actually used} in the activity. We use a very basic
 \href{https://github.com/flucoma/graphics/tree/main/nn_visualizer}{graphviz
 script} to generate these graphs.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/nn-visualization.png}
+\caption{An example graph visualizing the structure of a neural network. This particular architecture is used in the Example Lesson Plan: MLPRegressor. \ref{example-lesson-plan}}
+\label{fig:nn-visualization}
+\end{figure}
 
 \subsection{Threading}\label{threading}
 
@@ -859,7 +864,7 @@ One activity that has been quite successful is a simple ``listening
 test.'' We ask a class of learners to sing the pitch of a
 \href{https://learn.flucoma.org/learn/weighting-stats/01_src.mp3}{sound file}. Most listeners will sing the right pitch class of the tone
 but down a few octaves from the actual frequency. The first thing to
-point out is that they were only singing the pitch from the part of the
+point out the the group is that they were only singing the pitch from the part of the
 sound file that was \emph{most} pitched. They didn't even attempt to
 sing the ``pitch'' during the scratchy parts. We then look at a 
 \href{https://learn.flucoma.org/learn/weighting-stats/03_src_with_pitch.jpg}{chart}
@@ -874,7 +879,7 @@ depending on which seems appropriate or useful at a given moment. When
 the sound file is making scratchy sounds, we as humans don't even
 register it as a ``pitch'' to sing, but a machine does.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/pitch-analysis.jpg}
 \caption{Pitch analysis of a buffer that has some pure tone and some scratchy timbres.}
@@ -887,9 +892,8 @@ Similarity}. Most listeners will sing the correct pitch class but down a
 few octaves. For these listeners, being 12 half steps lower (a distance
 of 12) is closer than being 1 half step lower (a distance of one). This
 is again a recognition that what humans might assume to be
-\emph{similar} a machine might not (in this case using
-\href{https://learn.flucoma.org/reference/chroma/}{Chroma} analysis may
-help align human and machine listening).
+\emph{similar} a machine might not. Recognizing these misalignments offers a great opportunity to reflect on how one might bring the machine's perception closer to our own, for example, using the \texttt{confidence} measure from a \href{https://learn.flucoma.org/reference/pitch/}{Pitch} analysis may help focus the machine on the \textit{more} pitched moments and a 
+\href{https://learn.flucoma.org/reference/chroma/}{Chroma} analysis would ignore the octave.
 
 \subsubsection{Statistics}
 
@@ -934,13 +938,27 @@ represents, what it can tell you (and more importantly what it
 \emph{can't}), and what transformations \emph{do} to data is essential.
 It is continuously important for FluCoMa learners to reflect on their
 data. There are a few visualization tools that are very important for
-users to get comfortable with including the Waveform object
+users to get comfortable with including Plotter (\texttt{fluid.plotter\textasciitilde{}} in Max and \texttt{FluidPlotter} in SuperCollider) and Waveform
 (\texttt{fluid.waveform\textasciitilde{}} in Max and
 \texttt{FluidWaveform} in SuperCollider). While teaching, these tools
 should be used whenever possible to help learners understand the data
 processing that is happening and get them in the habit of visually
 checking on their data regularly to build understanding of what their
 data represents.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/fluidplotter.png}
+\caption{Screenshot of FluidPlotter used in SuperCollider.}
+\label{fig:fluid-plotter}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/fluidwaveform.png}
+\caption{Screenshot of FluidWaveform used in SuperCollider.}
+\label{fig:fluid-waveform}
+\end{figure}
 
 Many machine learning algorithms make various assumptions about data
 (similar to how humans make assumptions about sound and machine
@@ -960,7 +978,7 @@ distance impact perceptions and assumptions about similarity. Once the
 machine has ``listened'' and a statistical summary has been computed, a
 next step is often to compare data points by computing the distance
 between them (most of the FluCoMa tools use Euclidean Distance).
-Computing distance very quickly makes questions about ranges and scaling
+Computing distance makes questions about ranges and scaling
 relevant, such as how a
 \href{https://youtu.be/qom6x1u4_6A?t=1122}{mismatch of scale} may
 overly weight the importance of dimensions that have larger ranges.
@@ -975,7 +993,7 @@ neighbor is with (1) no scaling, (2) Normalize, (3) Standardize, and
 (4) RobustScale. (This is essentially what the sequence of images does in
 the \href{https://learn.flucoma.org/learn/comparing-scalers/}{Comparing
 Scalers} page.) Doing these comparisons in real time while hearing the sonic differences
-can help concretize the importance for learnings.
+can help concretize the importance for learners.
 
 It can often be important for learners to keep track of which dimensions
 might be logarithmic or linear and know how those differences could
@@ -992,7 +1010,7 @@ displayed logarithmically in pitch space (perhaps labeled as MIDI notes
 or semitones). If measuring in hertz, the distance from the A4 down one
 octave to A3 is 220 hertz, while the distance from A4 up one octave to
 A5 is 440 hertz---twice as far even though we perceive them to both be
-one octave! Measuring these distances in semitones however will reflect
+one octave! Measuring these distances in semitones will reflect
 they way we perceive them: both a distance of 12.}
 \end{quote}
 
@@ -1011,8 +1029,8 @@ by a human. KMeans was clustering it much differently,
 including leaving many clusters empty. This was solved by
 \href{https://www.youtube.com/watch?v=LzoWRqZzhZ4}{demonstrating}
 (including \href{https://www.youtube.com/watch?v=mFsuJXqNYFs}{with the
-original data}) how the learner could seed KMeans as a ``human in the
-loop'' approach to direct its processing with the information also
+original data}) how the learner could seed KMeans using a ``human in the
+loop'' approach to direct its processing with information also
 inferred by a human.
 
 \subsection{De-Myth-ifying Machine Learning}\label{de-myth-ifying-machine-learning}
@@ -1029,13 +1047,13 @@ Sometimes the question transforms from ``How can FluCoMa do this?'' to
 ``Can FluCoMa do this?'' at which point perhaps there's a different tool
 that we can point them to, or help them realize that their goal is too
 lofty--that it stems from a belief that ``AI can do anything'' or
-``throw it at a neural network and it'll figure it out''. Usually this
-process enriches the learners ideas about what is possible with FluCoMa
+``throw it at a neural network and it'll figure it out.'' Usually this
+process enriches the learner's ideas about what is possible with FluCoMa
 (even if it's not necessarily what they hoped) and provides a lot of
 possibilities for investigation.
 
 Another de-myth-ification that has occured is when learners will assume
-that the machine learning \emph{is} performing some magic. This is often
+that the machine learning \emph{is} performing some magic when it is not. This is often
 in the form of learners not \emph{validating} or testing the machine
 learning model or the results of their algorithm. The first disclaimer
 to make is that, as artists, we're interested in artistically compelling
@@ -1126,7 +1144,7 @@ fosters can be used to reflect on many of the AI events and concerns
 that are constantly appearing in the news. Pedagogues might draw on
 these events to use as discussion topics where a classroom of learners
 can collectively reflect on contemporary topics using the experience and
-understand built through FluCoMa.
+understanding built through FluCoMa.
 
 Below is a list of books (in no particular order) that provide many
 examples of contemporary technologies negatively impacting marginalized

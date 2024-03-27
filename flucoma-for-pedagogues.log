@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  16 MAR 2024 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  26 MAR 2024 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -235,33 +235,41 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count279
+\float@exts=\toks19
+\float@box=\box58
+\@float@everytoks=\toks20
+\@floatcapt=\box59
+)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count279
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count280
+\l__pdf_internal_box=\box60
 )
 (./flucoma-for-pedagogues.aux)
 \openout1 = `flucoma-for-pedagogues.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-Package hyperref Info: Link coloring OFF on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+Package hyperref Info: Link coloring OFF on input line 17.
  (./flucoma-for-pedagogues.out)
 (./flucoma-for-pedagogues.out)
 \@outlinefile=\write3
@@ -270,17 +278,17 @@ Package hyperref Info: Link coloring OFF on input line 16.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count280
+\scratchcounter=\count281
 \scratchdimen=\dimen163
-\scratchbox=\box59
-\nofMPsegments=\count281
-\nofMParguments=\count282
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count283
+\scratchbox=\box61
+\nofMPsegments=\count282
+\nofMParguments=\count283
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count284
 \MPscratchDim=\dimen164
-\MPnumerator=\count284
-\makeMPintoPDFobject=\count285
-\everyMPtoPDFconversion=\toks20
+\MPnumerator=\count285
+\makeMPintoPDFobject=\count286
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -291,13 +299,13 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 19.
+(Font)              <12> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 19.
+(Font)              <8> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 19.
+(Font)              <6> on input line 20.
 
-Overfull \hbox (47.20721pt too wide) in paragraph at lines 19--19
+Overfull \hbox (47.20721pt too wide) in paragraph at lines 20--20
  [][] 
  []
 
@@ -314,86 +322,171 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `flucoma-for-pedagogues.toc'.
 
  [2] [3] [4] [5]
-Overfull \hbox (3.58401pt too wide) in paragraph at lines 213--218
+<./figures/mfcc-interactive-demonstration.png, id=231, 1274.7625pt x 458.71375p
+t>
+File: ./figures/mfcc-interactive-demonstration.png Graphic file (type png)
+<use ./figures/mfcc-interactive-demonstration.png>
+Package pdftex.def Info: ./figures/mfcc-interactive-demonstration.png  used on 
+input line 211.
+(pdftex.def)             Requested size: 310.4979pt x 111.72441pt.
+
+Overfull \hbox (3.58401pt too wide) in paragraph at lines 218--223
 \OT1/cmr/m/n/10 FluCoMa's learn-ing web-site ([]learn.flucoma.org[]) also con-t
 ains many ar-ti-cles about
  []
 
-
-Overfull \hbox (1.83405pt too wide) in paragraph at lines 266--281
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.268 
+      {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1
+.enc} <./figures/mfcc-interactive-demonstration.png>]
+Overfull \hbox (1.83405pt too wide) in paragraph at lines 271--286
 \OT1/cmr/m/n/10 The in-ter-na-tional com-mu-nity of Flu-CoMa users pri-mar-ily 
 com-mu-ni-cates through
  []
 
-[6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}]
-<./figures/interconnected-resources.png, id=261, 1221.56375pt x 337.26pt>
+<./figures/interconnected-resources.png, id=255, 1221.56375pt x 337.26pt>
 File: ./figures/interconnected-resources.png Graphic file (type png)
 <use ./figures/interconnected-resources.png>
 Package pdftex.def Info: ./figures/interconnected-resources.png  used on input 
-line 303.
+line 308.
 (pdftex.def)             Requested size: 310.4979pt x 85.72484pt.
- [7 <./figures/interconnected-resources.png>] [8] [9] [10]
-<./figures/bufstats-chart.png, id=327, 1370.11874pt x 628.3475pt>
+[7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.319 
+       <./figures/interconnected-resources.png>] [8] [9] [10]
+<./figures/bufstats-chart.png, id=320, 1370.11874pt x 628.3475pt>
 File: ./figures/bufstats-chart.png Graphic file (type png)
 <use ./figures/bufstats-chart.png>
-Package pdftex.def Info: ./figures/bufstats-chart.png  used on input line 581.
+Package pdftex.def Info: ./figures/bufstats-chart.png  used on input line 577.
 (pdftex.def)             Requested size: 310.4979pt x 142.39798pt.
- [11 <./figures/bufstats-chart.png>] [12] [13] [14]
-Overfull \hbox (132.74583pt too wide) in paragraph at lines 829--829
+ [11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.608 
+       <./figures/bufstats-chart.png>]
+<./figures/bufflatten.png, id=332, 317.185pt x 436.63126pt>
+File: ./figures/bufflatten.png Graphic file (type png)
+<use ./figures/bufflatten.png>
+Package pdftex.def Info: ./figures/bufflatten.png  used on input line 625.
+(pdftex.def)             Requested size: 310.4979pt x 427.46265pt.
+ [12] [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.643   I
+         n all three CCEs, buffers are accessed at the lower levels of code <./
+figures/bufflatten.png>] [14] [15]
+<./figures/nn-visualization.png, id=370, 1990.43625pt x 3802.205pt>
+File: ./figures/nn-visualization.png Graphic file (type png)
+<use ./figures/nn-visualization.png>
+Package pdftex.def Info: ./figures/nn-visualization.png  used on input line 785
+.
+(pdftex.def)             Requested size: 310.4979pt x 593.1068pt.
+ [16]
+Overfull \vbox (79.05124pt too high) has occurred while \output is active []
+
+
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.789 
+       <./figures/nn-visualization.png>]
+Overfull \hbox (132.74583pt too wide) in paragraph at lines 834--834
 []  \OT1/cmtt/m/n/10 FluidBufSpectralShape.processBlocking(s,~src,start,num,fea
 tures:spec,select:[\centroid]);[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 829--829
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 834--834
 []  \OT1/cmtt/m/n/10 FluidBufStats.processBlocking(s,spec,stats:stats,select:[\
 mean]);[] 
  []
 
 
-Overfull \hbox (80.24629pt too wide) in paragraph at lines 829--829
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 834--834
 []  \OT1/cmtt/m/n/10 // copy the mean spectral centroid to the appropriate inde
 x (destStartFrame) of[] 
  []
 
 
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 829--829
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 834--834
 []  \OT1/cmtt/m/n/10 FluidBufCompose.processBlocking(s,stats,destination:meance
 ntroids,destStartFrame:i);[] 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-834.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 834.
+839.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 839.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 834.
+(Font)              for symbol `textbraceleft' on input line 839.
 
-[15]
-<./figures/pitch-analysis.jpg, id=379, 1628.61972pt x 407.15492pt>
+[18]
+<./figures/pitch-analysis.jpg, id=392, 1628.61972pt x 407.15492pt>
 File: ./figures/pitch-analysis.jpg Graphic file (type jpg)
 <use ./figures/pitch-analysis.jpg>
-Package pdftex.def Info: ./figures/pitch-analysis.jpg  used on input line 879.
+Package pdftex.def Info: ./figures/pitch-analysis.jpg  used on input line 884.
 (pdftex.def)             Requested size: 310.4979pt x 77.62117pt.
- [16 <./figures/pitch-analysis.jpg>] [17] [18] [19]
-(./flucoma-for-pedagogues.bbl [20]) [21] (./flucoma-for-pedagogues.aux)
+ [19
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.897 
+       <./figures/pitch-analysis.jpg>]
+<./figures/fluidplotter.png, id=409, 915.42pt x 943.525pt>
+File: ./figures/fluidplotter.png Graphic file (type png)
+<use ./figures/fluidplotter.png>
+Package pdftex.def Info: ./figures/fluidplotter.png  used on input line 951.
+(pdftex.def)             Requested size: 310.4979pt x 320.0312pt.
+ [20]
+<./figures/fluidwaveform.png, id=416, 1316.92pt x 441.65pt>
+File: ./figures/fluidwaveform.png Graphic file (type png)
+<use ./figures/fluidwaveform.png>
+Package pdftex.def Info: ./figures/fluidwaveform.png  used on input line 958.
+(pdftex.def)             Requested size: 310.4979pt x 104.12471pt.
+ [21
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.973 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.973 
+       <./figures/fluidplotter.png> <./figures/fluidwaveform.png>] [22]
+[23] [24] (./flucoma-for-pedagogues.bbl) [25] (./flucoma-for-pedagogues.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `flucoma-for-pedagogues.out' has not changed.
 
-(rerunfilecheck)             Checksum: C121941442D0669D15A9C63072458C41;6551.
+(rerunfilecheck)             Checksum: 41C6DDC02F859510F47B79C88CF6C732;6076.
  ) 
 Here is how much of TeX's memory you used:
- 8561 strings out of 476025
- 136970 string characters out of 5790018
- 1864388 words of memory out of 5000000
- 28829 multiletter control sequences out of 15000+600000
+ 8678 strings out of 476025
+ 139422 string characters out of 5790018
+ 1863388 words of memory out of 5000000
+ 28930 multiletter control sequences out of 15000+600000
  517698 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,76p,403b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,423b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -402,10 +495,10 @@ r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on flucoma-for-pedagogues.pdf (21 pages, 549981 bytes).
+Output written on flucoma-for-pedagogues.pdf (25 pages, 4715115 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 87 named destinations out of 1000 (max. 500000)
- 312 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 452 compressed objects within 5 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
